@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -41,6 +42,7 @@ export default function RegisterPage() {
   const [submitting, setSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState("")
   const [agreedToTerms, setAgreedToTerms] = useState(false)
+  const [showTerms, setShowTerms] = useState(false)
 
   const totalSteps = steps.length
 
@@ -766,12 +768,16 @@ export default function RegisterPage() {
                           className="text-sm font-normal leading-relaxed text-muted-foreground"
                         >
                           I agree to the{" "}
-                          <Link
-                            href="#"
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.preventDefault()
+                              setShowTerms(true)
+                            }}
                             className="font-medium text-primary underline underline-offset-4 hover:text-primary/80"
                           >
                             Terms & Conditions
-                          </Link>{" "}
+                          </button>{" "}
                           and consent to Reading Resolved collecting and using the
                           information provided above to support my child&apos;s
                           learning.{" "}
@@ -836,6 +842,121 @@ export default function RegisterPage() {
           </div>
         </section>
       </main>
+
+      {/* Terms & Conditions Modal */}
+      {showTerms && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-foreground/60 p-4 backdrop-blur-sm"
+          onClick={() => setShowTerms(false)}
+        >
+          <div
+            className="relative max-h-[85vh] w-full max-w-2xl overflow-hidden rounded-2xl bg-background shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex items-center justify-between border-b border-border px-6 py-4">
+              <h2 className="font-serif text-xl text-foreground">
+                Terms & Conditions
+              </h2>
+              <button
+                type="button"
+                onClick={() => setShowTerms(false)}
+                className="flex h-8 w-8 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                aria-label="Close terms and conditions"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <div className="overflow-y-auto px-6 py-6" style={{ maxHeight: "calc(85vh - 130px)" }}>
+              <div className="flex flex-col gap-6 text-sm leading-relaxed text-muted-foreground">
+                <div>
+                  <h3 className="mb-2 font-semibold text-foreground">1. Services</h3>
+                  <p>
+                    Reading Resolved provides specialized educational support including dyslexia intervention, academic tutoring, structured math support, and life coaching for students with learning differences. Sessions are provided on a 1-on-1 basis either online or in-person at our Mississauga location.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="mb-2 font-semibold text-foreground">2. Registration & Information</h3>
+                  <p>
+                    By completing this registration form, you consent to Reading Resolved collecting and using the information provided to support your child{"'"}s learning. All information provided must be accurate and complete. You agree to notify us of any changes to the information provided.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="mb-2 font-semibold text-foreground">3. Privacy & Confidentiality</h3>
+                  <p>
+                    All personal information collected through this form is kept strictly confidential. We do not share, sell, or distribute your personal information to third parties. Student records, assessments, and progress reports are stored securely and only accessible to authorized Reading Resolved staff directly involved in your child{"'"}s program.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="mb-2 font-semibold text-foreground">4. Sessions & Scheduling</h3>
+                  <p>
+                    Sessions are scheduled in advance and require 24-hour notice for cancellations or rescheduling. Late cancellations or no-shows may be subject to the full session fee. Reading Resolved reserves the right to adjust scheduling as needed with reasonable notice.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="mb-2 font-semibold text-foreground">5. Payment & Fees</h3>
+                  <p>
+                    Session fees are as listed on our website and are due at the time of service or as agreed upon in advance. Rates may be subject to change with 30 days written notice. All fees are in Canadian dollars (CAD).
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="mb-2 font-semibold text-foreground">6. Scope of Services</h3>
+                  <p>
+                    Reading Resolved provides educational support services only. We do not provide medical, psychological, or therapeutic services. Our life coaching program is educational in nature and is not a substitute for professional therapy or counseling.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="mb-2 font-semibold text-foreground">7. Consent for Minors</h3>
+                  <p>
+                    By registering your child, you confirm that you are the parent or legal guardian with authority to consent to these services on behalf of the student. You agree to be responsible for all fees and obligations under these terms.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="mb-2 font-semibold text-foreground">8. Limitation of Liability</h3>
+                  <p>
+                    While Reading Resolved is committed to providing the highest quality educational support, we cannot guarantee specific academic outcomes. Progress varies by individual and depends on multiple factors including attendance, practice, and the nature of the learning difference.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="mb-2 font-semibold text-foreground">9. Modifications</h3>
+                  <p>
+                    Reading Resolved reserves the right to update these Terms & Conditions at any time. Continued use of our services after changes constitutes acceptance of the updated terms. We will make reasonable efforts to notify clients of significant changes.
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="mb-2 font-semibold text-foreground">10. Contact</h3>
+                  <p>
+                    If you have questions about these terms, please contact us at readingresolved@gmail.com or call +1 (647) 632-5801.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="border-t border-border px-6 py-4">
+              <Button
+                type="button"
+                onClick={() => setShowTerms(false)}
+                className="w-full"
+                size="lg"
+              >
+                Close
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   )
 }

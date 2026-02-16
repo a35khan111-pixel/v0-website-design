@@ -93,7 +93,7 @@ export function Navbar() {
             </Link>
           ))}
           <Button asChild className="ml-4">
-            <Link href="/register">Student Registration</Link>
+            <Link href="/student-registration">Student Registration</Link>
           </Button>
         </div>
 
@@ -132,7 +132,7 @@ export function Navbar() {
               </Link>
             ))}
             <Button asChild className="mt-3 w-full">
-              <Link href="/register">Student Registration</Link>
+              <Link href="/student-registration">Student Registration</Link>
             </Button>
             <SocialLinks
               className="mt-5 flex items-center gap-4 border-t border-border pt-5"

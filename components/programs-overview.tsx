@@ -1,17 +1,25 @@
-import { BookOpen, GraduationCap, Heart } from "lucide-react"
+import { BookOpen, GraduationCap, Heart, Calculator } from "lucide-react"
 
 const programs = [
   {
     icon: BookOpen,
-    title: "Dyslexia Support",
+    title: "Dyslexia Intervention",
     subtitle: "Tailored 1-on-1 Sessions",
     description:
       "From avoiding books to reading with ease. Specialized Orton-Gillingham based intervention.",
     anchor: "#dyslexia",
   },
   {
+    icon: Calculator,
+    title: "Structured Math Support",
+    subtitle: "45 Min Sessions",
+    description:
+      "For students with dyscalculia or math learning differences. Multisensory instruction that makes numbers finally make sense.",
+    anchor: "#dyscalculia",
+  },
+  {
     icon: GraduationCap,
-    title: "Academic Tutoring",
+    title: "Advanced Academic Support for Learning Differences",
     subtitle: "Grades 3-12",
     description:
       "Academic support and strategic guidance from core subjects to university admissions.",
@@ -19,7 +27,7 @@ const programs = [
   },
   {
     icon: Heart,
-    title: "Life Coaching",
+    title: "Life Coaching for Students with Learning Differences",
     subtitle: "Pre-Teens & Teens",
     description:
       "Building confidence, emotional intelligence, and self-advocacy skills.",
@@ -34,22 +42,22 @@ export function ProgramsOverview() {
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-serif text-3xl text-foreground sm:text-4xl">
             <span className="text-balance">
-              We believe dyslexia support should go beyond reading.
+              Specialized Support. One Transformative Journey.
             </span>
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
             At Reading Resolved, we provide structured, proven methods designed
-            for how dyslexic brains learn -- supporting your child from their first
+            for how students with learning differences learn. We support your child from their first
             reading breakthrough through academic independence and beyond.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            Shaped by over 25 years of experience, our programs help children
+            Shaped by over 25 years of experience, our programs help students
             move from avoiding books to reading with confidence and self-belief.
           </p>
         </div>
 
-        {/* Three program quick links */}
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
+        {/* Four program quick links */}
+        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {programs.map((program) => (
             <a
               key={program.title}
@@ -62,7 +70,7 @@ export function ProgramsOverview() {
               <p className="text-xs font-semibold uppercase tracking-widest text-primary">
                 {program.subtitle}
               </p>
-              <h3 className="mt-2 font-serif text-2xl text-card-foreground">
+              <h3 className="mt-2 font-serif text-xl text-card-foreground">
                 {program.title}
               </h3>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">

@@ -54,7 +54,7 @@ export default function ContactPage() {
                 <div className="h-px w-8 bg-primary" />
               </div>
               <h1 className="font-serif text-4xl text-background text-balance md:text-5xl lg:text-6xl">
-                {"Let's Start Your Child's Journey"}
+                {"One Conversation Can Change Everything. Let\u2019s Connect."}
               </h1>
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-background/60">
                 {
@@ -80,8 +80,8 @@ export default function ContactPage() {
                   </h3>
                   <p className="mb-6 text-primary-foreground/75">
                     Book a free consultation and discover how we can help your
-                    child thrive. No obligation, just a conversation about your{" "}
-                    {"child's"} needs.
+                    child. No obligation, just a conversation about your{" "}
+                    {"child\u2019s"} needs.
                   </p>
                   <Button
                     asChild
@@ -135,6 +135,11 @@ export default function ContactPage() {
                 </a>
               </div>
             </div>
+
+            {/* Connector line */}
+            <p className="mt-8 text-center text-base leading-relaxed text-muted-foreground">
+              {"Other ways to connect? Choose from below \u2014 we respond quickly no matter how you reach out."}
+            </p>
 
             {/* Location & Hours Row */}
             <div className="mt-6 grid gap-6 md:grid-cols-2">

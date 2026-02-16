@@ -5,7 +5,7 @@ import { BookOpen, GraduationCap, Heart, ArrowRight, Check } from "lucide-react"
 const plans = [
   {
     icon: BookOpen,
-    name: "Dyslexia Support",
+    name: "Dyslexia Intervention",
     duration: "45 min sessions",
     price: "$70",
     unit: "per session",
@@ -19,7 +19,7 @@ const plans = [
   },
   {
     icon: GraduationCap,
-    name: "Academic Tutoring",
+    name: "Advanced Academic Support",
     duration: "45 min sessions",
     price: "$70",
     unit: "per session",
@@ -30,7 +30,6 @@ const plans = [
       "Test prep & essay coaching",
       "University admissions support",
     ],
-    featured: true,
   },
   {
     icon: Heart,
