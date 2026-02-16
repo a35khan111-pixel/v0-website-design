@@ -28,15 +28,13 @@ export function ProgramsHero() {
           </div>
           <h1 className="font-serif text-4xl text-primary-foreground sm:text-5xl lg:text-6xl">
             <span className="text-balance">
-              Specialized Programs That Build{" "}
-              <span className="text-primary">Readers</span>,{" "}
-              <span className="text-primary">Learners</span>, and{" "}
-              <span className="text-primary">Leaders</span>.
+              {"From Struggling Reader to Graduate: We\u2019re With You "}
+              <span className="text-primary">Every Step</span>
+              {" of the Way"}
             </span>
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-primary-foreground/80">
-            We believe dyslexia support should go beyond reading. Our structured,
-            proven methods are designed for how dyslexic brains learn.
+            {"Dyslexia intervention. Academic excellence. Life skills\u2014expert support for students with learning differences, tailored to your child\u2019s unique journey."}
           </p>
           <Button
             asChild
@@ -44,7 +42,7 @@ export function ProgramsHero() {
             className="mt-8 shadow-lg shadow-primary/20"
           >
             <a href="https://calendly.com/readingresolved/free-consultation-understanding-your-child-s-needs" target="_blank" rel="noopener noreferrer">
-              Book a Free Consultation
+              Book My Free Consultation
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </Button>

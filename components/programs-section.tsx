@@ -5,7 +5,7 @@ import { BookOpen, GraduationCap, Heart, ArrowRight } from "lucide-react"
 const programs = [
   {
     icon: BookOpen,
-    title: "Specialized Dyslexia Support",
+    title: "Dyslexia Intervention",
     subtitle: "1-on-1 Tailored Sessions",
     description:
       "Reading might feel impossible right now, but it won\u2019t forever. As Orton-Gillingham trained practitioners, we teach the way your child\u2019s brain learns best.",
@@ -17,10 +17,10 @@ const programs = [
   },
   {
     icon: GraduationCap,
-    title: "Academic Tutoring",
+    title: "Advanced Academic Support for Learning Differences",
     subtitle: "Grades 3\u201312",
     description:
-      "Once reading clicks, new challenges may emerge. We help your child not just keep up, but excel with strategies for classroom independence.",
+      "Once reading clicks, new challenges emerge. We help students with learning differences not just keep up, but excel with strategies designed for how they learn.",
     highlight:
       "No more nightly homework battles\u2014just real confidence.",
     image: "/images/student-success.jpg",
@@ -29,7 +29,7 @@ const programs = [
   },
   {
     icon: Heart,
-    title: "Life Coaching",
+    title: "Life Coaching for Students with Learning Differences",
     subtitle: "Pre-Teens & Teens",
     description:
       "We help students develop emotional intelligence, navigate peer pressure, and build self-advocacy skills to shape their own future.",
@@ -43,7 +43,7 @@ const programs = [
 
 export function ProgramsSection() {
   return (
-    <section className="bg-background py-20 lg:py-28">
+    <section className="bg-background py-14 lg:py-20">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <div className="mx-auto mb-16 max-w-2xl text-center">
@@ -52,11 +52,11 @@ export function ProgramsSection() {
           </p>
           <h2 className="mt-3 font-serif text-3xl text-foreground md:text-4xl">
             <span className="text-balance">
-              {"Your Child\u2019s Journey\u2014From Struggling Reader to Confident Learner"}
+              {"Dyslexia Specialists Who Support Your Child at Every Stage"}
             </span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
-            {"Most tutors stop when reading clicks. We don\u2019t. From dyslexia intervention to academic tutoring to life coaching\u2014we support your child at every stage."}
+            {"Most tutors stop when reading clicks. We don\u2019t. From dyslexia intervention to academic excellence to life skills\u2014we support students with learning differences at every stage."}
           </p>
         </div>
 

@@ -43,7 +43,7 @@ export default function ContactPage() {
     <>
       <main>
         {/* Hero */}
-        <section className="bg-foreground py-20 lg:py-28">
+        <section className="bg-foreground py-14 lg:py-20">
           <div className="mx-auto max-w-7xl px-6 text-center sm:px-8 lg:px-16">
             <div className="animate-fade-in">
               <div className="mb-6 flex items-center justify-center gap-3">
@@ -54,7 +54,7 @@ export default function ContactPage() {
                 <div className="h-px w-8 bg-primary" />
               </div>
               <h1 className="font-serif text-4xl text-background text-balance md:text-5xl lg:text-6xl">
-                {"Let's Start Your Child's Journey"}
+                {"One Conversation Can Change Everything. Let\u2019s Connect."}
               </h1>
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-background/60">
                 {
@@ -66,7 +66,7 @@ export default function ContactPage() {
         </section>
 
         {/* Quick Actions */}
-        <section className="py-16 lg:py-20">
+        <section className="py-12 lg:py-16">
           <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-16">
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {/* Book Consultation Card */}
@@ -80,8 +80,8 @@ export default function ContactPage() {
                   </h3>
                   <p className="mb-6 text-primary-foreground/75">
                     Book a free consultation and discover how we can help your
-                    child thrive. No obligation, just a conversation about your{" "}
-                    {"child's"} needs.
+                    child. No obligation, just a conversation about your{" "}
+                    {"child\u2019s"} needs.
                   </p>
                   <Button
                     asChild
@@ -94,7 +94,7 @@ export default function ContactPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Book a Free Consultation
+                      Book My Free Consultation
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                     </a>
                   </Button>
@@ -136,6 +136,11 @@ export default function ContactPage() {
               </div>
             </div>
 
+            {/* Connector line */}
+            <p className="mt-8 text-center text-base leading-relaxed text-muted-foreground">
+              {"Other ways to connect? Choose from below \u2014 we respond quickly no matter how you reach out."}
+            </p>
+
             {/* Location & Hours Row */}
             <div className="mt-6 grid gap-6 md:grid-cols-2">
               <div className="flex items-start gap-5 rounded-2xl border border-border bg-card p-8 transition-all hover:border-primary/30 hover:shadow-md">
@@ -175,7 +180,7 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Form Section */}
-        <section className="bg-muted py-16 lg:py-24">
+        <section className="bg-muted py-12 lg:py-16">
           <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-16">
             <div className="mx-auto max-w-2xl">
               <div className="text-center">
@@ -344,7 +349,7 @@ export default function ContactPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Book a Free Consultation
+                  Book My Free Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>

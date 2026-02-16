@@ -91,7 +91,7 @@ export function Footer() {
                 Contact
               </Link>
               <Link
-                href="/register"
+                href="/student-registration"
                 className="text-sm text-muted-foreground transition-colors hover:text-primary"
               >
                 Student Registration
@@ -109,13 +109,19 @@ export function Footer() {
                 href="/programs#dyslexia"
                 className="text-sm text-muted-foreground transition-colors hover:text-primary"
               >
-                Dyslexia Support
+                Dyslexia Intervention
+              </Link>
+              <Link
+                href="/programs#dyscalculia"
+                className="text-sm text-muted-foreground transition-colors hover:text-primary"
+              >
+                Structured Math Support
               </Link>
               <Link
                 href="/programs#academic"
                 className="text-sm text-muted-foreground transition-colors hover:text-primary"
               >
-                Academic Tutoring
+                Academic Support
               </Link>
               <Link
                 href="/programs#coaching"

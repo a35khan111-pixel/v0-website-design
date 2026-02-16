@@ -6,12 +6,12 @@ const signs = [
   "Struggles with spelling despite studying hard",
   "Reads far below their grade level",
   "Has been told they\u2019ll \u201Ccatch up\u201D but hasn\u2019t",
-  "Feels anxious or embarrassed about reading aloud",
+  "Avoids reading aloud",
 ]
 
 export function QualifierSection() {
   return (
-    <section className="py-20 lg:py-24">
+    <section className="py-14 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-16">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
@@ -23,7 +23,7 @@ export function QualifierSection() {
             </span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
-            If your child experiences any of these, they may benefit from
+            If your child experiences any of these, they will benefit from
             specialized dyslexia support.
           </p>
         </div>
