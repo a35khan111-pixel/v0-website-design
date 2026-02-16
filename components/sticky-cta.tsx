@@ -20,13 +20,13 @@ export function StickyCTA() {
   if (dismissed || !visible) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 translate-y-0 transition-transform duration-300">
+    <div className="fixed bottom-[60px] left-0 right-0 z-40 translate-y-0 transition-transform duration-300 sm:bottom-0">
       <div className="border-t border-border/60 bg-background/95 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] backdrop-blur supports-[backdrop-filter]:bg-background/85">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
           <div className="hidden items-center gap-3 sm:flex">
             <div className="h-2 w-2 animate-pulse rounded-full bg-primary" />
             <p className="text-sm font-medium text-foreground">
-              Limited spots available for Spring 2026
+              Limited spots available each month
             </p>
           </div>
           <div className="flex flex-1 items-center justify-center gap-3 sm:flex-none sm:justify-end">
@@ -36,7 +36,7 @@ export function StickyCTA() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Book Free Consultation
+                Book My Free Consultation
                 <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
               </a>
             </Button>

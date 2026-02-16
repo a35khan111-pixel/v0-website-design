@@ -136,7 +136,7 @@ export default function RegisterPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Book a Free Consultation
+                Book My Free Consultation
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>

@@ -29,7 +29,7 @@ const programs = [
 
 export function ProgramsOverview() {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-14 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-16">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="font-serif text-3xl text-foreground sm:text-4xl">

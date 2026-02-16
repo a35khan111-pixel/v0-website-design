@@ -50,7 +50,7 @@ const plans = [
 
 export function PricingSection() {
   return (
-    <section className="bg-foreground py-20 text-background lg:py-28">
+    <section className="bg-foreground py-14 text-background lg:py-20">
       <div className="mx-auto max-w-7xl px-6">
         {/* Header */}
         <div className="mx-auto mb-16 max-w-2xl text-center">
@@ -129,7 +129,7 @@ export function PricingSection() {
                 }`}
               >
                 <a href="https://calendly.com/readingresolved/free-consultation-understanding-your-child-s-needs" target="_blank" rel="noopener noreferrer">
-                  Get Started
+                  Book My Free Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>

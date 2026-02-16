@@ -19,8 +19,8 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
         {/* Mobile floating badge */}
         <div className="absolute bottom-4 left-4 rounded-lg bg-primary px-4 py-2.5 text-primary-foreground shadow-lg">
-          <p className="text-xs font-semibold">Orton-Gillingham Trained</p>
-          <p className="text-[10px] opacity-80">Research-Based Methods</p>
+          <p className="text-xs font-semibold">Orton-Gillingham</p>
+          <p className="text-[10px] opacity-80">Dyslexia Specialists</p>
         </div>
       </div>
 
@@ -54,7 +54,7 @@ export function HeroSection() {
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button size="lg" asChild className="text-base shadow-lg shadow-primary/20">
                 <a href="https://calendly.com/readingresolved/free-consultation-understanding-your-child-s-needs" target="_blank" rel="noopener noreferrer">
-                  Book Your Free Consultation
+                  Book My Free Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
@@ -69,7 +69,7 @@ export function HeroSection() {
               <p className="text-sm italic leading-relaxed text-muted-foreground">
                 Within 3 months, my daughter went from crying over homework to reading on her own.
                 <span className="mt-1 block text-xs font-medium not-italic text-foreground/70">
-                  -- Parent of a Grade 3 student
+                  -- Raluca M., Parent of Grade 3 Student
                 </span>
               </p>
             </div>
@@ -113,8 +113,8 @@ export function HeroSection() {
             </div>
             {/* Floating accent card */}
             <div className="absolute -bottom-6 -left-6 animate-fade-in animation-delay-600 rounded-xl bg-primary px-6 py-4 text-primary-foreground shadow-lg">
-              <p className="text-sm font-semibold">Orton-Gillingham Trained</p>
-              <p className="text-xs opacity-80">Research-Based Methods</p>
+              <p className="text-sm font-semibold">Orton-Gillingham</p>
+              <p className="text-xs opacity-80">Dyslexia Specialists</p>
             </div>
             {/* Decorative dot pattern */}
             <div className="absolute -right-4 -top-4 -z-10 h-32 w-32 rounded-2xl bg-primary/10" />

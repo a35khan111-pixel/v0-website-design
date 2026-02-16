@@ -36,7 +36,7 @@ export function ProgramDetail({
   bgClass = "",
 }: ProgramDetailProps) {
   return (
-    <section id={id} className={`py-20 lg:py-28 ${bgClass}`}>
+    <section id={id} className={`py-14 lg:py-20 ${bgClass}`}>
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-16">
         {/* Header */}
         <div className="mb-12 text-center lg:mb-16">
@@ -133,7 +133,7 @@ export function ProgramDetail({
             <div className="mt-8">
               <Button asChild size="lg" className="shadow-lg shadow-primary/20">
                 <a href="https://calendly.com/readingresolved/free-consultation-understanding-your-child-s-needs" target="_blank" rel="noopener noreferrer">
-                  Book a Free Consultation
+                  Book My Free Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>

@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export function StorySection() {
   return (
-    <section id="story" className="py-20 lg:py-28 bg-card">
+    <section id="story" className="py-14 lg:py-20 bg-card">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-16">
         <div className="mx-auto max-w-3xl">
           {/* Section tag */}
@@ -116,7 +116,7 @@ export function StorySection() {
 
           <div className="mt-12 flex justify-center">
             <Button asChild size="lg" className="text-base shadow-lg shadow-primary/20">
-              <a href="https://calendly.com/readingresolved/free-consultation-understanding-your-child-s-needs" target="_blank" rel="noopener noreferrer">{"Let's"} Connect to Talk Further</a>
+              <a href="https://calendly.com/readingresolved/free-consultation-understanding-your-child-s-needs" target="_blank" rel="noopener noreferrer">Book My Free Consultation</a>
             </Button>
           </div>
         </div>

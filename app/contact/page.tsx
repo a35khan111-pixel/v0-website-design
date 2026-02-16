@@ -43,7 +43,7 @@ export default function ContactPage() {
     <>
       <main>
         {/* Hero */}
-        <section className="bg-foreground py-20 lg:py-28">
+        <section className="bg-foreground py-14 lg:py-20">
           <div className="mx-auto max-w-7xl px-6 text-center sm:px-8 lg:px-16">
             <div className="animate-fade-in">
               <div className="mb-6 flex items-center justify-center gap-3">
@@ -66,7 +66,7 @@ export default function ContactPage() {
         </section>
 
         {/* Quick Actions */}
-        <section className="py-16 lg:py-20">
+        <section className="py-12 lg:py-16">
           <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-16">
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {/* Book Consultation Card */}
@@ -94,7 +94,7 @@ export default function ContactPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Book a Free Consultation
+                      Book My Free Consultation
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                     </a>
                   </Button>
@@ -175,7 +175,7 @@ export default function ContactPage() {
         </section>
 
         {/* Contact Form Section */}
-        <section className="bg-muted py-16 lg:py-24">
+        <section className="bg-muted py-12 lg:py-16">
           <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-16">
             <div className="mx-auto max-w-2xl">
               <div className="text-center">
@@ -344,7 +344,7 @@ export default function ContactPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Book a Free Consultation
+                  Book My Free Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>

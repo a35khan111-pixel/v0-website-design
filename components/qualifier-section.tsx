@@ -11,7 +11,7 @@ const signs = [
 
 export function QualifierSection() {
   return (
-    <section className="py-20 lg:py-24">
+    <section className="py-14 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-16">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">

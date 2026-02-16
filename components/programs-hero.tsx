@@ -44,7 +44,7 @@ export function ProgramsHero() {
             className="mt-8 shadow-lg shadow-primary/20"
           >
             <a href="https://calendly.com/readingresolved/free-consultation-understanding-your-child-s-needs" target="_blank" rel="noopener noreferrer">
-              Book a Free Consultation
+              Book My Free Consultation
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </Button>

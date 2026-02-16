@@ -1,6 +1,6 @@
 export function IntroSection() {
   return (
-    <section className="bg-card py-20 lg:py-28">
+    <section className="bg-card py-14 lg:py-20">
       <div className="mx-auto max-w-3xl px-6 text-center">
         {/* Decorative line */}
         <div className="mx-auto mb-8 flex items-center justify-center gap-3">

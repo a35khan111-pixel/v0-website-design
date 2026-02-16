@@ -4,7 +4,7 @@ import { ArrowRight, Phone, Mail } from "lucide-react"
 
 export function CTASection() {
   return (
-    <section className="bg-card py-20 lg:py-28">
+    <section className="bg-card py-14 lg:py-20">
       <div className="mx-auto max-w-3xl px-6 text-center">
         {/* Decorative */}
         <div className="mx-auto mb-8 flex items-center justify-center gap-3">
@@ -25,7 +25,7 @@ export function CTASection() {
         <div className="mt-10">
           <Button size="lg" asChild className="text-base shadow-lg shadow-primary/20">
             <a href="https://calendly.com/readingresolved/free-consultation-understanding-your-child-s-needs" target="_blank" rel="noopener noreferrer">
-              Book Your Free Specialist Consultation
+              Book My Free Consultation
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </Button>

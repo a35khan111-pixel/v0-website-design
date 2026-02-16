@@ -52,7 +52,7 @@ export function TestimonialsSection() {
   const testimonial = testimonials[current]
 
   return (
-    <section className="bg-background py-20 lg:py-28">
+    <section className="bg-background py-14 lg:py-20">
       <div className="mx-auto max-w-4xl px-6">
         {/* Header */}
         <div className="mb-12 text-center">
