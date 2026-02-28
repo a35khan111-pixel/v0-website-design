@@ -36,8 +36,128 @@ const steps = [
   { id: 5, label: "Your Child's Story", icon: Heart },
 ]
 
+type FormData = {
+  studentFirstName: string
+  studentLastName: string
+  age: string
+  grade: string
+  dob: string
+  school: string
+  fatherFirstName: string
+  fatherLastName: string
+  fatherPhone: string
+  motherFirstName: string
+  motherLastName: string
+  motherPhone: string
+  email: string
+  country: string
+  address1: string
+  address2: string
+  city: string
+  province: string
+  postalCode: string
+  allergies: string
+  hasIEP: string
+  iepCopyWilling: string
+  hasPsychoEd: string
+  psychoEdCopyWilling: string
+  medications: string
+  handedness: string
+  strengths: string
+  growthAreas: string
+  hopes: string
+  goals: string
+  referral: string
+}
+
+const initialFormData: FormData = {
+  studentFirstName: "",
+  studentLastName: "",
+  age: "",
+  grade: "",
+  dob: "",
+  school: "",
+  fatherFirstName: "",
+  fatherLastName: "",
+  fatherPhone: "",
+  motherFirstName: "",
+  motherLastName: "",
+  motherPhone: "",
+  email: "",
+  country: "canada",
+  address1: "",
+  address2: "",
+  city: "",
+  province: "",
+  postalCode: "",
+  allergies: "",
+  hasIEP: "",
+  iepCopyWilling: "",
+  hasPsychoEd: "",
+  psychoEdCopyWilling: "",
+  medications: "",
+  handedness: "",
+  strengths: "",
+  growthAreas: "",
+  hopes: "",
+  goals: "",
+  referral: "",
+}
+
+function validateStep(step: number, data: FormData): string[] {
+  const errors: string[] = []
+  switch (step) {
+    case 1:
+      if (!data.studentFirstName.trim()) errors.push("Student first name is required.")
+      if (!data.studentLastName.trim()) errors.push("Student last name is required.")
+      if (!data.age) errors.push("Age is required.")
+      if (!data.grade.trim()) errors.push("Grade is required.")
+      if (!data.dob) errors.push("Date of birth is required.")
+      if (!data.school.trim()) errors.push("School name is required.")
+      break
+    case 2:
+      if (!data.fatherFirstName.trim()) errors.push("Father's first name is required.")
+      if (!data.fatherLastName.trim()) errors.push("Father's last name is required.")
+      if (!data.fatherPhone.trim()) errors.push("Father's phone number is required.")
+      if (!data.motherFirstName.trim()) errors.push("Mother's first name is required.")
+      if (!data.motherLastName.trim()) errors.push("Mother's last name is required.")
+      if (!data.motherPhone.trim()) errors.push("Mother's phone number is required.")
+      if (!data.email.trim()) errors.push("Email address is required.")
+      break
+    case 3:
+      if (!data.address1.trim()) errors.push("Address Line 1 is required.")
+      if (!data.city.trim()) errors.push("City is required.")
+      if (!data.province.trim()) errors.push("Province is required.")
+      if (!data.postalCode.trim()) errors.push("Postal code is required.")
+      break
+    case 4:
+      if (!data.allergies.trim()) errors.push("Please describe any allergies (or type 'None').")
+      if (!data.hasIEP) errors.push("Please indicate whether your child has an IEP.")
+      if (!data.hasPsychoEd) errors.push("Please indicate whether your child has had a psycho-ed evaluation.")
+      if (!data.medications) errors.push("Please indicate whether your child takes learning-related medications.")
+      if (!data.handedness) errors.push("Please indicate your child's handedness.")
+      break
+    case 5:
+      if (!data.strengths.trim()) errors.push("Please tell us about your child's strengths.")
+      if (!data.growthAreas.trim()) errors.push("Please describe where your child could use support.")
+      if (!data.hopes.trim()) errors.push("Please describe what a breakthrough would look like.")
+      if (!data.goals.trim()) errors.push("Please describe your goals for working with us.")
+      break
+  }
+  return errors
+}
+
+const countryLabels: Record<string, string> = {
+  canada: "Canada",
+  usa: "United States",
+  other: "Other",
+}
+
 export default function RegisterPage() {
   const [currentStep, setCurrentStep] = useState(1)
+  const [maxStep, setMaxStep] = useState(1)
+  const [formData, setFormData] = useState<FormData>(initialFormData)
+  const [stepErrors, setStepErrors] = useState<string[]>([])
   const [submitted, setSubmitted] = useState(false)
   const [submitting, setSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState("")
@@ -46,55 +166,80 @@ export default function RegisterPage() {
 
   const totalSteps = steps.length
 
+  function updateField(field: keyof FormData, value: string) {
+    setFormData((prev) => ({ ...prev, [field]: value }))
+  }
+
   function handleNext() {
-    if (currentStep < totalSteps) setCurrentStep(currentStep + 1)
+    const errors = validateStep(currentStep, formData)
+    if (errors.length > 0) {
+      setStepErrors(errors)
+      return
+    }
+    setStepErrors([])
+    if (currentStep < totalSteps) {
+      const next = currentStep + 1
+      setCurrentStep(next)
+      setMaxStep((prev) => Math.max(prev, next))
+    }
   }
 
   function handlePrev() {
+    setStepErrors([])
     if (currentStep > 1) setCurrentStep(currentStep - 1)
+  }
+
+  function handleStepClick(stepId: number) {
+    if (stepId > maxStep) return
+    setStepErrors([])
+    setCurrentStep(stepId)
   }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
+
+    const errors = validateStep(5, formData)
+    if (errors.length > 0) {
+      setStepErrors(errors)
+      return
+    }
+    if (!agreedToTerms) return
+
     setSubmitting(true)
     setSubmitError("")
 
-    const form = e.currentTarget
-    const get = (id: string) => (form.querySelector(`#${id}`) as HTMLInputElement | HTMLTextAreaElement | null)?.value ?? ""
-    const getRadio = (name: string) => (form.querySelector(`input[name="${name}"]:checked`) as HTMLInputElement | null)?.value ?? ""
-
     const data = {
-      studentFirstName: get("studentFirstName"),
-      studentLastName: get("studentLastName"),
-      age: get("age"),
-      grade: get("grade"),
-      dateOfBirth: get("dob"),
-      school: get("school"),
-      fatherFirstName: get("fatherFirstName"),
-      fatherLastName: get("fatherLastName"),
-      fatherPhone: get("fatherPhone"),
-      motherFirstName: get("motherFirstName"),
-      motherLastName: get("motherLastName"),
-      motherPhone: get("motherPhone"),
-      country: get("country") || "Canada",
-      addressLine1: get("address1"),
-      addressLine2: get("address2"),
-      city: get("city"),
-      province: get("province"),
-      postalCode: get("postalCode"),
-      email: get("email"),
-      allergies: get("allergies"),
-      hasIEP: getRadio("iep"),
-      iepCopyWilling: getRadio("iepCopy"),
-      hasPsychoEd: getRadio("psychoEd"),
-      psychoEdCopyWilling: getRadio("psychoEdCopy"),
-      medications: getRadio("medications"),
-      handedness: getRadio("handedness"),
-      strengths: get("strengths"),
-      growthAreas: get("growth-areas"),
-      hopes: get("hopes"),
-      goals: get("goals"),
-      referral: get("referral"),
+      studentFirstName: formData.studentFirstName,
+      studentLastName: formData.studentLastName,
+      age: formData.age,
+      grade: formData.grade,
+      dateOfBirth: formData.dob,
+      school: formData.school,
+      fatherFirstName: formData.fatherFirstName,
+      fatherLastName: formData.fatherLastName,
+      fatherPhone: formData.fatherPhone,
+      motherFirstName: formData.motherFirstName,
+      motherLastName: formData.motherLastName,
+      motherPhone: formData.motherPhone,
+      country: countryLabels[formData.country] ?? formData.country,
+      addressLine1: formData.address1,
+      addressLine2: formData.address2,
+      city: formData.city,
+      province: formData.province,
+      postalCode: formData.postalCode,
+      email: formData.email,
+      allergies: formData.allergies,
+      hasIEP: formData.hasIEP,
+      iepCopyWilling: formData.iepCopyWilling,
+      hasPsychoEd: formData.hasPsychoEd,
+      psychoEdCopyWilling: formData.psychoEdCopyWilling,
+      medications: formData.medications,
+      handedness: formData.handedness,
+      strengths: formData.strengths,
+      growthAreas: formData.growthAreas,
+      hopes: formData.hopes,
+      goals: formData.goals,
+      referral: formData.referral,
     }
 
     try {
@@ -181,16 +326,21 @@ export default function RegisterPage() {
                 const Icon = step.icon
                 const isActive = step.id === currentStep
                 const isComplete = step.id < currentStep
+                const isReachable = step.id <= maxStep
                 return (
                   <div key={step.id} className="flex flex-1 items-center">
                     <button
-                      onClick={() => setCurrentStep(step.id)}
+                      type="button"
+                      onClick={() => handleStepClick(step.id)}
+                      disabled={!isReachable}
                       className={`group flex flex-col items-center gap-1.5 transition-colors ${
                         isActive
                           ? "text-primary"
                           : isComplete
                           ? "text-primary/70"
-                          : "text-muted-foreground/50"
+                          : isReachable
+                          ? "text-muted-foreground/50"
+                          : "text-muted-foreground/30 cursor-not-allowed"
                       }`}
                     >
                       <div
@@ -199,7 +349,9 @@ export default function RegisterPage() {
                             ? "border-primary bg-primary text-primary-foreground shadow-md shadow-primary/20"
                             : isComplete
                             ? "border-primary bg-primary/10 text-primary"
-                            : "border-border bg-background text-muted-foreground/50 group-hover:border-muted-foreground"
+                            : isReachable
+                            ? "border-border bg-background text-muted-foreground/50 group-hover:border-muted-foreground"
+                            : "border-border bg-background text-muted-foreground/30"
                         }`}
                       >
                         {isComplete ? (
@@ -229,7 +381,7 @@ export default function RegisterPage() {
         {/* Form */}
         <section className="py-12 lg:py-16">
           <div className="mx-auto max-w-3xl px-6 sm:px-8">
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} noValidate>
               {/* Step 1: Student Info */}
               {currentStep === 1 && (
                 <div className="animate-fade-in">
@@ -253,7 +405,8 @@ export default function RegisterPage() {
                             First Name
                           </Label>
                           <Input
-                            required
+                            value={formData.studentFirstName}
+                            onChange={(e) => updateField("studentFirstName", e.target.value)}
                             className="mt-1 border-border bg-card"
                             placeholder="First name"
                           />
@@ -263,7 +416,8 @@ export default function RegisterPage() {
                             Last Name
                           </Label>
                           <Input
-                            required
+                            value={formData.studentLastName}
+                            onChange={(e) => updateField("studentLastName", e.target.value)}
                             className="mt-1 border-border bg-card"
                             placeholder="Last name"
                           />
@@ -273,50 +427,50 @@ export default function RegisterPage() {
 
                     <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
                       <div>
-                        <Label htmlFor="age" className="text-sm font-medium">
+                        <Label className="text-sm font-medium">
                           Age <span className="text-destructive">*</span>
                         </Label>
                         <Input
-                          id="age"
                           type="number"
-                          required
                           min={3}
                           max={20}
+                          value={formData.age}
+                          onChange={(e) => updateField("age", e.target.value)}
                           className="mt-2 border-border bg-card"
                           placeholder="Age"
                         />
                       </div>
                       <div>
-                        <Label htmlFor="grade" className="text-sm font-medium">
+                        <Label className="text-sm font-medium">
                           Grade <span className="text-destructive">*</span>
                         </Label>
                         <Input
-                          id="grade"
-                          required
+                          value={formData.grade}
+                          onChange={(e) => updateField("grade", e.target.value)}
                           className="mt-2 border-border bg-card"
                           placeholder="e.g. Grade 4"
                         />
                       </div>
                       <div>
-                        <Label htmlFor="dob" className="text-sm font-medium">
+                        <Label className="text-sm font-medium">
                           Date of Birth <span className="text-destructive">*</span>
                         </Label>
                         <Input
-                          id="dob"
                           type="date"
-                          required
+                          value={formData.dob}
+                          onChange={(e) => updateField("dob", e.target.value)}
                           className="mt-2 border-border bg-card"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <Label htmlFor="school" className="text-sm font-medium">
+                      <Label className="text-sm font-medium">
                         School Attending <span className="text-destructive">*</span>
                       </Label>
                       <Input
-                        id="school"
-                        required
+                        value={formData.school}
+                        onChange={(e) => updateField("school", e.target.value)}
                         className="mt-2 border-border bg-card"
                         placeholder="Name of current school"
                       />
@@ -350,20 +504,36 @@ export default function RegisterPage() {
                             <Label className="text-xs text-muted-foreground">
                               First Name <span className="text-destructive">*</span>
                             </Label>
-                            <Input required className="mt-1 border-border bg-background" placeholder="First name" />
+                            <Input
+                              value={formData.fatherFirstName}
+                              onChange={(e) => updateField("fatherFirstName", e.target.value)}
+                              className="mt-1 border-border bg-background"
+                              placeholder="First name"
+                            />
                           </div>
                           <div>
                             <Label className="text-xs text-muted-foreground">
                               Last Name <span className="text-destructive">*</span>
                             </Label>
-                            <Input required className="mt-1 border-border bg-background" placeholder="Last name" />
+                            <Input
+                              value={formData.fatherLastName}
+                              onChange={(e) => updateField("fatherLastName", e.target.value)}
+                              className="mt-1 border-border bg-background"
+                              placeholder="Last name"
+                            />
                           </div>
                         </div>
                         <div>
                           <Label className="text-xs text-muted-foreground">
                             Cell Phone <span className="text-destructive">*</span>
                           </Label>
-                          <Input required type="tel" className="mt-1 border-border bg-background" placeholder="+1 (647) 000-0000" />
+                          <Input
+                            type="tel"
+                            value={formData.fatherPhone}
+                            onChange={(e) => updateField("fatherPhone", e.target.value)}
+                            className="mt-1 border-border bg-background"
+                            placeholder="+1 (647) 000-0000"
+                          />
                         </div>
                       </div>
                     </div>
@@ -380,32 +550,48 @@ export default function RegisterPage() {
                             <Label className="text-xs text-muted-foreground">
                               First Name <span className="text-destructive">*</span>
                             </Label>
-                            <Input required className="mt-1 border-border bg-background" placeholder="First name" />
+                            <Input
+                              value={formData.motherFirstName}
+                              onChange={(e) => updateField("motherFirstName", e.target.value)}
+                              className="mt-1 border-border bg-background"
+                              placeholder="First name"
+                            />
                           </div>
                           <div>
                             <Label className="text-xs text-muted-foreground">
                               Last Name <span className="text-destructive">*</span>
                             </Label>
-                            <Input required className="mt-1 border-border bg-background" placeholder="Last name" />
+                            <Input
+                              value={formData.motherLastName}
+                              onChange={(e) => updateField("motherLastName", e.target.value)}
+                              className="mt-1 border-border bg-background"
+                              placeholder="Last name"
+                            />
                           </div>
                         </div>
                         <div>
                           <Label className="text-xs text-muted-foreground">
                             Cell Phone <span className="text-destructive">*</span>
                           </Label>
-                          <Input required type="tel" className="mt-1 border-border bg-background" placeholder="+1 (647) 000-0000" />
+                          <Input
+                            type="tel"
+                            value={formData.motherPhone}
+                            onChange={(e) => updateField("motherPhone", e.target.value)}
+                            className="mt-1 border-border bg-background"
+                            placeholder="+1 (647) 000-0000"
+                          />
                         </div>
                       </div>
                     </div>
 
                     <div>
-                      <Label htmlFor="email" className="text-sm font-medium">
+                      <Label className="text-sm font-medium">
                         Email Address <span className="text-destructive">*</span>
                       </Label>
                       <Input
-                        id="email"
                         type="email"
-                        required
+                        value={formData.email}
+                        onChange={(e) => updateField("email", e.target.value)}
                         className="mt-2 border-border bg-card"
                         placeholder="your@email.com"
                       />
@@ -429,7 +615,10 @@ export default function RegisterPage() {
                   <div className="space-y-6">
                     <div>
                       <Label className="text-sm font-medium">Country</Label>
-                      <Select defaultValue="canada">
+                      <Select
+                        value={formData.country}
+                        onValueChange={(val) => updateField("country", val)}
+                      >
                         <SelectTrigger className="mt-2 border-border bg-card">
                           <SelectValue placeholder="Select country" />
                         </SelectTrigger>
@@ -442,23 +631,24 @@ export default function RegisterPage() {
                     </div>
 
                     <div>
-                      <Label htmlFor="address1" className="text-sm font-medium">
+                      <Label className="text-sm font-medium">
                         Address Line 1 <span className="text-destructive">*</span>
                       </Label>
                       <Input
-                        id="address1"
-                        required
+                        value={formData.address1}
+                        onChange={(e) => updateField("address1", e.target.value)}
                         className="mt-2 border-border bg-card"
                         placeholder="Street address"
                       />
                     </div>
 
                     <div>
-                      <Label htmlFor="address2" className="text-sm font-medium">
+                      <Label className="text-sm font-medium">
                         Address Line 2
                       </Label>
                       <Input
-                        id="address2"
+                        value={formData.address2}
+                        onChange={(e) => updateField("address2", e.target.value)}
                         className="mt-2 border-border bg-card"
                         placeholder="Apartment, suite, unit, etc."
                       />
@@ -466,34 +656,34 @@ export default function RegisterPage() {
 
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                       <div>
-                        <Label htmlFor="city" className="text-sm font-medium">
+                        <Label className="text-sm font-medium">
                           City <span className="text-destructive">*</span>
                         </Label>
                         <Input
-                          id="city"
-                          required
+                          value={formData.city}
+                          onChange={(e) => updateField("city", e.target.value)}
                           className="mt-2 border-border bg-card"
                           placeholder="City"
                         />
                       </div>
                       <div>
-                        <Label htmlFor="province" className="text-sm font-medium">
+                        <Label className="text-sm font-medium">
                           Province <span className="text-destructive">*</span>
                         </Label>
                         <Input
-                          id="province"
-                          required
+                          value={formData.province}
+                          onChange={(e) => updateField("province", e.target.value)}
                           className="mt-2 border-border bg-card"
                           placeholder="Province"
                         />
                       </div>
                       <div>
-                        <Label htmlFor="postal" className="text-sm font-medium">
+                        <Label className="text-sm font-medium">
                           Postal Code <span className="text-destructive">*</span>
                         </Label>
                         <Input
-                          id="postal"
-                          required
+                          value={formData.postalCode}
+                          onChange={(e) => updateField("postalCode", e.target.value)}
                           className="mt-2 border-border bg-card"
                           placeholder="A1A 1A1"
                         />
@@ -517,13 +707,13 @@ export default function RegisterPage() {
 
                   <div className="space-y-8">
                     <div>
-                      <Label htmlFor="allergies" className="text-sm font-medium">
+                      <Label className="text-sm font-medium">
                         Does your child have any allergies (especially food
                         allergies)? <span className="text-destructive">*</span>
                       </Label>
                       <Textarea
-                        id="allergies"
-                        required
+                        value={formData.allergies}
+                        onChange={(e) => updateField("allergies", e.target.value)}
                         rows={3}
                         className="mt-2 border-border bg-card"
                         placeholder="List any allergies or type 'None'"
@@ -536,7 +726,11 @@ export default function RegisterPage() {
                         Does your child have an IEP or equivalent document?{" "}
                         <span className="text-destructive">*</span>
                       </Label>
-                      <RadioGroup defaultValue="" className="mt-3 flex gap-6">
+                      <RadioGroup
+                        value={formData.hasIEP}
+                        onValueChange={(val) => updateField("hasIEP", val)}
+                        className="mt-3 flex gap-6"
+                      >
                         <div className="flex items-center gap-2">
                           <RadioGroupItem value="yes" id="iep-yes" />
                           <Label htmlFor="iep-yes" className="font-normal">
@@ -554,7 +748,11 @@ export default function RegisterPage() {
                         <Label className="text-sm text-muted-foreground">
                           If yes, will you be willing to provide a copy?
                         </Label>
-                        <RadioGroup defaultValue="" className="mt-2 flex gap-6">
+                        <RadioGroup
+                          value={formData.iepCopyWilling}
+                          onValueChange={(val) => updateField("iepCopyWilling", val)}
+                          className="mt-2 flex gap-6"
+                        >
                           <div className="flex items-center gap-2">
                             <RadioGroupItem value="yes" id="iep-copy-yes" />
                             <Label htmlFor="iep-copy-yes" className="font-normal">
@@ -577,7 +775,11 @@ export default function RegisterPage() {
                         Has your child had a psycho-ed evaluation done?{" "}
                         <span className="text-destructive">*</span>
                       </Label>
-                      <RadioGroup defaultValue="" className="mt-3 flex gap-6">
+                      <RadioGroup
+                        value={formData.hasPsychoEd}
+                        onValueChange={(val) => updateField("hasPsychoEd", val)}
+                        className="mt-3 flex gap-6"
+                      >
                         <div className="flex items-center gap-2">
                           <RadioGroupItem value="yes" id="psycho-yes" />
                           <Label htmlFor="psycho-yes" className="font-normal">
@@ -595,7 +797,11 @@ export default function RegisterPage() {
                         <Label className="text-sm text-muted-foreground">
                           If yes, will you be willing to provide a copy?
                         </Label>
-                        <RadioGroup defaultValue="" className="mt-2 flex gap-6">
+                        <RadioGroup
+                          value={formData.psychoEdCopyWilling}
+                          onValueChange={(val) => updateField("psychoEdCopyWilling", val)}
+                          className="mt-2 flex gap-6"
+                        >
                           <div className="flex items-center gap-2">
                             <RadioGroupItem value="yes" id="psycho-copy-yes" />
                             <Label
@@ -625,7 +831,11 @@ export default function RegisterPage() {
                         their learning (e.g. for focus, anxiety, etc.)?{" "}
                         <span className="text-destructive">*</span>
                       </Label>
-                      <RadioGroup defaultValue="" className="mt-3 flex gap-6">
+                      <RadioGroup
+                        value={formData.medications}
+                        onValueChange={(val) => updateField("medications", val)}
+                        className="mt-3 flex gap-6"
+                      >
                         <div className="flex items-center gap-2">
                           <RadioGroupItem value="yes" id="meds-yes" />
                           <Label htmlFor="meds-yes" className="font-normal">
@@ -647,7 +857,11 @@ export default function RegisterPage() {
                         Is your child right-handed or left-handed?{" "}
                         <span className="text-destructive">*</span>
                       </Label>
-                      <RadioGroup defaultValue="" className="mt-3 flex gap-6">
+                      <RadioGroup
+                        value={formData.handedness}
+                        onValueChange={(val) => updateField("handedness", val)}
+                        className="mt-3 flex gap-6"
+                      >
                         <div className="flex items-center gap-2">
                           <RadioGroupItem value="right" id="hand-right" />
                           <Label htmlFor="hand-right" className="font-normal">
@@ -688,7 +902,8 @@ export default function RegisterPage() {
                       </Label>
                       <Textarea
                         id="strengths"
-                        required
+                        value={formData.strengths}
+                        onChange={(e) => updateField("strengths", e.target.value)}
                         rows={4}
                         className="mt-2 border-border bg-card"
                         placeholder="e.g. They love animals, are incredibly creative, have a great sense of humor..."
@@ -703,7 +918,8 @@ export default function RegisterPage() {
                       </Label>
                       <Textarea
                         id="growth-areas"
-                        required
+                        value={formData.growthAreas}
+                        onChange={(e) => updateField("growthAreas", e.target.value)}
                         rows={4}
                         className="mt-2 border-border bg-card"
                         placeholder="e.g. Building confidence in reading, staying focused on homework, feeling more comfortable in class..."
@@ -719,7 +935,8 @@ export default function RegisterPage() {
                       </Label>
                       <Textarea
                         id="hopes"
-                        required
+                        value={formData.hopes}
+                        onChange={(e) => updateField("hopes", e.target.value)}
                         rows={4}
                         className="mt-2 border-border bg-card"
                         placeholder="e.g. Seeing them pick up a book on their own, feeling confident before a test, enjoying school again..."
@@ -734,7 +951,8 @@ export default function RegisterPage() {
                       </Label>
                       <Textarea
                         id="goals"
-                        required
+                        value={formData.goals}
+                        onChange={(e) => updateField("goals", e.target.value)}
                         rows={4}
                         className="mt-2 border-border bg-card"
                         placeholder="e.g. A love for reading, stronger self-belief, skills to succeed independently..."
@@ -747,6 +965,8 @@ export default function RegisterPage() {
                       </Label>
                       <Input
                         id="referral"
+                        value={formData.referral}
+                        onChange={(e) => updateField("referral", e.target.value)}
                         className="mt-2 border-border bg-card"
                         placeholder="e.g. Google, a friend, school recommendation"
                       />
@@ -786,6 +1006,22 @@ export default function RegisterPage() {
                       </div>
                     </div>
                   </div>
+                </div>
+              )}
+
+              {/* Validation errors */}
+              {stepErrors.length > 0 && (
+                <div className="mt-6 rounded-lg border border-destructive/30 bg-destructive/5 p-4">
+                  <p className="mb-2 text-sm font-medium text-destructive">
+                    Please complete the following before continuing:
+                  </p>
+                  <ul className="space-y-1">
+                    {stepErrors.map((err, i) => (
+                      <li key={i} className="text-sm text-destructive/80">
+                        • {err}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               )}
 
