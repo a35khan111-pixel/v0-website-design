@@ -8,8 +8,8 @@ export function ProgramsHero() {
     <section className="relative flex min-h-[60vh] items-end overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/programs-hero.jpg"
-          alt="Children learning together in a bright classroom"
+          src="/images/programs-hero-graduate.jpg"
+          alt="Graduate in cap and gown representing the complete learning journey"
           fill
           sizes="100vw"
           className="object-cover"

@@ -85,6 +85,12 @@ export function Footer() {
                 Programs
               </Link>
               <Link
+                href="/success-stories"
+                className="text-sm text-muted-foreground transition-colors hover:text-primary"
+              >
+                Success Stories
+              </Link>
+              <Link
                 href="/contact"
                 className="text-sm text-muted-foreground transition-colors hover:text-primary"
               >

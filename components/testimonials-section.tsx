@@ -1,35 +1,24 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react"
+import Link from "next/link"
+import { ChevronLeft, ChevronRight, Quote, Star, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const testimonials = [
   {
-    title: "We Finally Saw Reading Click.",
     quote:
-      "After trying multiple tutors without improvement, we found Sakina. Within 4 months, my dyslexic daughter went from resisting reading to voluntarily picking up books.",
-    body: "The moment that brought me to tears: Two months after starting, my daughter wrote her own birthday party agenda\u2014and for the first time, I could actually read what she\u2019d written. Then she picked up a birthday card and read it perfectly. My husband and I were in awe. Ten months later: She\u2019s reading book descriptions with 95% accuracy. Before Sakina, she would have maybe read 20% of that, if at all.",
-    closing:
-      "Sakina is warm, welcoming, and makes my daughter feel comfortable to move at her own pace. Anyone would be lucky to have her as their tutor.",
+      "The moment that brought me to tears: my daughter wrote her own birthday party agenda and for the first time, I could actually read it. Ten months later, she is reading with 95% accuracy.",
     author: "Susan W.",
   },
   {
-    title: "From Avoiding Books to Finishing Her First Chapter Book.",
     quote:
-      "When our 8-year-old\u2019s younger brother (two grades below her) started approaching the same reading level, we knew she needed specialized help.",
-    body: "She could only read very simple books meant for younger children. She couldn\u2019t remember how to read simple words even after seeing them multiple times. Fast forward one year (2 hours per week with Sakina): Our daughter just finished reading her first chapter book\u2014over 100 pages\u2014voluntarily!",
-    closing:
-      "When I asked my daughter what makes Mrs. Sakina different from other teachers, she said: \u201CMrs. Sakina makes it fun, she tells jokes, and helps me a lot.\u201D",
-    author: "Judith Versloot, PhD",
+      "My daughter is now reading chapter books, which was once just a dream. Sakina has a rare ability to balance a specialized curriculum with the heart and motivation a child needs.",
+    author: "Samira, High School Teacher",
   },
   {
-    title: "From Avoiding Textbooks to Choosing University",
     quote:
-      "Our college-age son avoided reading textbooks. He\u2019d use a \u2018hunt and peck\u2019 method to find answers instead of actually reading.",
-    body: "Mild ADHD runs in the family, and heavier reading assignments overwhelmed him. Sakina works incredibly well with young adults and aspiring professionals. She keeps the work fun while staying on task and getting results.",
-    closing:
-      "The transformation: My son looks forward to working with Sakina. There are fewer complaints about school. And most surprisingly? He recently decided to attend University after earning his Associate\u2019s Degree. I give credit to Sakina for helping him develop this new confidence.",
+      "My son went from avoiding textbooks to choosing University. I give credit to Sakina for helping him develop this new confidence.",
     author: "Karen, USA",
   },
 ]
@@ -70,32 +59,20 @@ export function TestimonialsSection() {
 
           <div
             key={current}
-            className={direction === "right" ? "animate-fade-in" : "animate-fade-in"}
+            className="animate-fade-in"
           >
-            <div className="mb-8 flex items-center gap-3">
-              <div className="h-1 w-8 rounded-full bg-primary" />
-              <span className="text-sm font-medium uppercase tracking-wider text-primary">
-                Success Story {current + 1}
-              </span>
+            {/* 5-Star Rating */}
+            <div className="mb-6 flex items-center gap-1">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+              ))}
             </div>
 
-            <h3 className="font-serif text-xl text-card-foreground md:text-2xl">
-              {testimonial.title}
-            </h3>
-
-            <blockquote className="mt-6 border-l-2 border-primary/40 pl-5">
-              <p className="italic leading-relaxed text-primary/90">
-                {testimonial.quote}
+            <blockquote className="border-l-2 border-primary/40 pl-5">
+              <p className="text-lg italic leading-relaxed text-foreground/90 md:text-xl">
+                {"\u201C"}{testimonial.quote}{"\u201D"}
               </p>
             </blockquote>
-
-            <p className="mt-6 leading-relaxed text-muted-foreground">
-              {testimonial.body}
-            </p>
-
-            <p className="mt-4 leading-relaxed text-muted-foreground">
-              {testimonial.closing}
-            </p>
 
             <div className="mt-8 border-t border-border pt-6">
               <p className="font-serif text-lg italic text-foreground">
@@ -146,6 +123,16 @@ export function TestimonialsSection() {
               </Button>
             </div>
           </div>
+        </div>
+
+        {/* View All CTA */}
+        <div className="mt-8 text-center">
+          <Button variant="outline" size="lg" asChild className="text-base">
+            <Link href="/success-stories">
+              View All Success Stories
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
         </div>
       </div>
     </section>

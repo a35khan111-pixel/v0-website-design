@@ -1,4 +1,3 @@
-import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Phone, Mail } from "lucide-react"
 
@@ -15,12 +14,9 @@ export function CTASection() {
 
         <h2 className="font-serif text-3xl text-foreground md:text-4xl lg:text-5xl">
           <span className="text-balance">
-            Ready to transform frustration into confidence?
+            {"Let\u2019s stop looking at where they are and start building where they are going."}
           </span>
         </h2>
-        <p className="mx-auto mt-6 max-w-xl text-lg italic leading-relaxed text-muted-foreground">
-          {"Let\u2019s start your child\u2019s journey with a specialist who understands exactly what they need."}
-        </p>
 
         <div className="mt-10">
           <Button size="lg" asChild className="text-base shadow-lg shadow-primary/20">
