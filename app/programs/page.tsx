@@ -37,7 +37,7 @@ const dyscalculiaProgram = {
   id: "dyscalculia",
   label: "Dyscalculia Support",
   title: "Structured Math Support",
-  subtitle: "45 Min Sessions",
+  subtitle: "From Frustration to Fluency: Math That Finally Makes Sense",
   intro: [
     "Numbers feel impossible. Math facts won't stick. Word problems create panic.",
     "For students with dyscalculia or math learning differences, traditional tutoring doesn't address the root issue: a difference in how their brain processes numbers.",
@@ -62,9 +62,9 @@ const academicProgram = {
   id: "academic",
   label: "Advanced Academic Support for Learning Differences",
   title: "Advanced Academic Support for Learning Differences",
-  subtitle: "Grades 3-12",
+  subtitle: "From Keeping Up to Standing Out",
   intro: [
-    "Your child has built reading confidence through dyslexia intervention. Now they're ready for the next level.",
+    "Your child is ready for the next level. Now it's time to help them soar academically.",
     "Students with learning differences face unique academic challenges -- but with the right strategies and support, they don't just keep up, they excel.",
     "We provide specialized academic coaching designed for how students with learning differences learn best -- from middle school success to university admissions, we help them advocate for themselves and own their educational future.",
   ],
@@ -81,8 +81,8 @@ const academicProgram = {
     title: "The Parent Win",
     text: "Watching your child stop dreading school and start owning their future. From navigating report cards to choosing a university -- you'll finally have a partner who gets it.",
   },
-  image: "/images/program-academic.jpg",
-  imageAlt: "Teenager studying confidently",
+  image: "/images/program-academic-teen.jpg",
+  imageAlt: "Teenager studying confidently at desk with laptop",
 }
 
 const coachingProgram = {

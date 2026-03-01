@@ -39,7 +39,7 @@ export function ProgramDetail({
     <section id={id} className={`py-14 lg:py-20 ${bgClass}`}>
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-16">
         {/* Header */}
-        <div className="mb-12 text-center lg:mb-16">
+        <div className="mb-8 text-center lg:mb-10">
           <div className="mb-4 flex items-center justify-center gap-3">
             <div className="h-px w-8 bg-primary/40" />
             <p className="text-xs font-semibold uppercase tracking-widest text-primary">
@@ -57,7 +57,7 @@ export function ProgramDetail({
 
         {/* Content Grid */}
         <div
-          className={`flex flex-col items-center gap-12 lg:gap-16 ${
+          className={`flex flex-col items-center gap-8 lg:gap-12 ${
             reversed ? "lg:flex-row-reverse" : "lg:flex-row"
           }`}
         >

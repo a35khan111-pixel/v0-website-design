@@ -48,8 +48,7 @@ export function HeroSection() {
               </span>
             </h1>
             <p className="max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Specialized 1-on-1 dyslexia tutoring that finally makes reading
-              click. Built on 25+ years of proven, research-based methods.
+              {"We provide 1-on-1 dyslexia tutoring designed to match how your child\u2019s mind works. With 25+ years of expertise, we bridge the gap between their potential and performance through proven methods tailored to their unique learning style."}
             </p>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button size="lg" asChild className="text-base shadow-lg shadow-primary/20">

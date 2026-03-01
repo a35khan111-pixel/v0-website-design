@@ -1,12 +1,26 @@
-import { CheckCircle2 } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 
-const signs = [
-  "Avoids reading or gets frustrated with books",
-  "Guesses at words instead of sounding them out",
-  "Struggles with spelling despite studying hard",
-  "Reads far below their grade level",
-  "Has been told they\u2019ll \u201Ccatch up\u201D but hasn\u2019t",
-  "Avoids reading aloud",
+const comparisons = [
+  {
+    now: "Not eager to read and avoids picking up a book at all costs.",
+    future: "Reading with joy and discovering the stories they used to avoid.",
+  },
+  {
+    now: "Low self-confidence and starting to believe they \u201Ccan\u2019t do it.\u201D",
+    future: "Confidence restored as they realize they have a brilliant mind.",
+  },
+  {
+    now: "Spelling struggles that lead to tears and meltdowns.",
+    future: "Spelling with ease using a logic-based system that works.",
+  },
+  {
+    now: "Great ideas that get stuck and never make it onto the page.",
+    future: "Writing with clarity and expressing big ideas with ease.",
+  },
+  {
+    now: "Homework battles and needing help with every single word.",
+    future: "Growing independence and the freedom to thrive on their own.",
+  },
 ]
 
 export function QualifierSection() {
@@ -14,39 +28,53 @@ export function QualifierSection() {
     <section className="py-14 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-16">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            Does this sound familiar?
-          </p>
-          <h2 className="mt-3 font-serif text-3xl text-foreground md:text-4xl">
+          <h2 className="font-serif text-3xl text-foreground md:text-4xl">
             <span className="text-balance">
-              {"You Know Something Isn\u2019t Clicking"}
+              {"Now that you know where you want to see your child, let\u2019s make it a reality."}
             </span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
-            If your child experiences any of these, they will benefit from
-            specialized dyslexia support.
+            {"You are in the right place if you want your child\u2019s potential to be unlocked. We understand how exhausting it feels when nothing seems to work. Our expertise is in bridging the gap between potential and performance."}
           </p>
         </div>
 
-        <div className="mx-auto mt-12 grid max-w-4xl gap-4 sm:grid-cols-2">
-          {signs.map((sign, i) => (
+        {/* Section Title */}
+        <div className="mx-auto mt-12 flex max-w-4xl items-center justify-center gap-4">
+          <div className="hidden items-center gap-2 sm:flex">
+            <div className="h-px w-12 bg-border" />
+          </div>
+          <div className="flex items-center gap-4 text-sm font-semibold uppercase tracking-widest">
+            <span className="text-muted-foreground">Where They Are Now</span>
+            <ArrowRight className="h-4 w-4 text-primary" />
+            <span className="text-primary">Where They Can Be</span>
+          </div>
+          <div className="hidden items-center gap-2 sm:flex">
+            <div className="h-px w-12 bg-border" />
+          </div>
+        </div>
+
+        {/* Comparison List */}
+        <div className="mx-auto mt-8 flex max-w-5xl flex-col gap-4">
+          {comparisons.map((item, i) => (
             <div
               key={i}
-              className="flex items-start gap-3 rounded-xl bg-card px-5 py-4 ring-1 ring-border transition-shadow hover:shadow-md"
+              className="grid items-center gap-3 rounded-xl bg-card p-5 ring-1 ring-border md:grid-cols-[1fr_auto_1fr] md:gap-6"
             >
-              <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary" />
-              <p className="text-sm leading-relaxed text-foreground">{sign}</p>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                {item.now}
+              </p>
+              <div className="hidden h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 md:flex">
+                <ArrowRight className="h-4 w-4 text-primary" />
+              </div>
+              <div className="flex items-center gap-2 md:hidden">
+                <ArrowRight className="h-3.5 w-3.5 flex-shrink-0 text-primary" />
+              </div>
+              <p className="text-sm font-medium leading-relaxed text-foreground">
+                {item.future}
+              </p>
             </div>
           ))}
         </div>
-
-        <p className="mx-auto mt-10 max-w-xl text-center text-base leading-relaxed text-muted-foreground">
-          {"If you checked even one, your child isn\u2019t lazy or behind\u2014they just need someone who understands how their brain works."}
-          {" "}
-          <span className="font-medium text-foreground">
-            {"That\u2019s exactly what we do."}
-          </span>
-        </p>
       </div>
     </section>
   )
