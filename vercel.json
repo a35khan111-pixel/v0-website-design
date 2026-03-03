@@ -1,0 +1,34 @@
+{
+  "redirects": [
+    {
+      "source": "/dyslexia-support",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/programs",
+      "destination": "/#programs",
+      "permanent": true
+    },
+    {
+      "source": "/success-stories",
+      "destination": "/#success-stories",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/student-registration",
+      "destination": "/#student-registration",
+      "permanent": true
+    }
+  ]
+}

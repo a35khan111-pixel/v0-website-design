@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { DM_Sans, DM_Serif_Display } from 'next/font/google'
+import Script from 'next/script'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
 
@@ -44,6 +45,34 @@ export default function RootLayout({
       <head>
         <link rel="preload" href="/images/logo.png" as="image" />
       </head>
+      {/* Google Ads Tag */}
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=AW-442653461"
+        strategy="afterInteractive"
+      />
+      <Script id="google-ads" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-442653461');
+        `}
+      </Script>
+      {/* Google Analytics 4 */}
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-HTPGLSBFWD"
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-HTPGLSBFWD');
+        `}
+      </Script>
       <body
         className={`${dmSans.variable} ${dmSerif.variable} font-sans antialiased`}
       >
