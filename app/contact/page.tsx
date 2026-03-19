@@ -56,13 +56,6 @@ export default function ContactPage() {
         throw new Error(data.error || "Failed to send message.")
       }
 
-      // Fire Google Ads conversion event on successful submission
-      if (typeof window !== "undefined" && window.gtag) {
-        window.gtag("event", "conversion", {
-          send_to: "AW-442653461",
-        })
-      }
-
       setSubmitted(true)
     } catch (err) {
       setSubmitError(err instanceof Error ? err.message : "Something went wrong. Please try again.")
@@ -296,9 +289,9 @@ export default function ContactPage() {
                   </div>
 
                   {submitError && (
-                    <div className="rounded-xl border border-destructive/30 bg-destructive/10 p-4 text-center text-sm text-destructive">
+                    <p className="rounded-xl border border-destructive/30 bg-destructive/5 px-4 py-3 text-sm text-destructive">
                       {submitError}
-                    </div>
+                    </p>
                   )}
 
                   <Button
@@ -308,7 +301,7 @@ export default function ContactPage() {
                     className="mt-2 h-14 rounded-xl text-base shadow-lg shadow-primary/20"
                   >
                     <Send className="mr-2 h-5 w-5" />
-                    {isSubmitting ? "Sending..." : "Send Message"}
+                    {isSubmitting ? "Sending…" : "Send Message"}
                   </Button>
                   <p className="text-center text-sm text-muted-foreground">
                     We typically respond within 24 hours.
