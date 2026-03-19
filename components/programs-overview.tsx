@@ -51,8 +51,7 @@ export function ProgramsOverview() {
             reading breakthrough through academic independence and beyond.
           </p>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            Shaped by over 25 years of experience, our programs help students
-            move from avoiding books to reading with confidence and self-belief.
+            Shaped by over 25 years of experience, our programs meet each child exactly where they are and stay beside them until they get where they are going.
           </p>
         </div>
 

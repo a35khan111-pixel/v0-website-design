@@ -8,17 +8,17 @@ const programs = [
     title: "Dyslexia Intervention",
     subtitle: "1-on-1 Tailored Sessions",
     description:
-      "Reading might feel impossible right now, but it won\u2019t forever. As Orton-Gillingham trained practitioners, we teach the way your child\u2019s brain learns best. We untangle the frustration and build the logic they need to finally make reading click. This is where potential becomes performance.",
+      "Your child hasn't been failing. The approach has.\n\nUsing Orton-Gillingham and structured literacy, we teach exactly how the dyslexic brain learns \u2014 building the logic, confidence and skills that finally make reading click.\n\nAnd when reading clicks, everything changes.\n\nSchool becomes easier. Confidence returns. And your child begins to see themselves differently.",
     image: "/images/tutor-session.jpg",
     imageAlt: "Tutor working one-on-one with a student",
     href: "/programs#dyslexia",
   },
   {
     icon: GraduationCap,
-    title: "Advanced Academic Support for Learning Differences",
-    subtitle: "Navigating Grade-Level Expectations",
+    title: "Academic Support & Independence",
+    subtitle: "Grades 3-12",
     description:
-      "Once reading clicks, the demands of school increase. We help students navigate complex curriculum by teaching them how to learn. By focusing on the gaps and building executive functioning, we turn school-day stress into classroom independence. This is real confidence for the long haul.",
+      "Reading success is only the beginning.\n\nAs students move through school, the workload increases and expectations rise. Many bright students with learning differences fall behind not because they lack intelligence \u2014 but because they were never taught how to learn.\n\nWe close academic gaps, build executive functioning and teach the strategies that create true independence.\n\nThis is where students stop surviving school \u2014 and start owning it.",
     image: "/images/student-success.jpg",
     imageAlt: "Student celebrating academic success",
     href: "/programs#academic",
@@ -26,9 +26,9 @@ const programs = [
   {
     icon: Heart,
     title: "Life Coaching for Students with Learning Differences",
-    subtitle: "For Pre-Teens and Teens",
+    subtitle: "For Pre-Teens, Teens and Young Adults",
     description:
-      "Success is about more than academics. We provide a safe space for students to develop emotional intelligence, navigate peer pressure, and build the self-advocacy skills they need to shape their own future. This is where they discover their own power.",
+      "For many students with learning differences, the hardest battle isn't academic. It's internal.\n\nYears of struggle can quietly shape how they see themselves.\n\nThrough 1-on-1 coaching, we help students rebuild confidence, develop emotional resilience and learn how to advocate for themselves in school and in life.\n\nThey learn to handle pressure, trust their voice and move forward with clarity.\n\nBecause the goal isn't just academic success. It's raising a young person who believes in their own potential.",
     image: "/images/life-coaching.jpg",
     imageAlt: "Coach having an encouraging conversation with a teenager",
     href: "/programs#coaching",
@@ -42,7 +42,7 @@ export function ProgramsSection() {
         {/* Header */}
         <div className="mx-auto mb-16 max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            Specialized Programs
+            Our Programs
           </p>
           <h2 className="mt-3 font-serif text-3xl text-foreground md:text-4xl">
             <span className="text-balance">
@@ -50,7 +50,7 @@ export function ProgramsSection() {
             </span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
-            We provide a continuous path from that first breakthrough to academic independence and beyond. We stay by your side to ensure the progress your child makes today becomes the foundation for their entire future.
+            {"We provide a continuous path from that first breakthrough to academic independence and beyond. We stay by your side to ensure the progress your child makes today becomes the foundation for their entire future."}
           </p>
         </div>
 
@@ -86,9 +86,9 @@ export function ProgramsSection() {
                     </p>
                   </div>
                 </div>
-                <p className="text-sm leading-relaxed text-muted-foreground">
+                <div className="text-sm leading-relaxed text-muted-foreground whitespace-pre-line">
                   {program.description}
-                </p>
+                </div>
                 <div className="mt-auto flex items-center gap-2 pt-2 text-sm font-semibold text-primary">
                   Learn more
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

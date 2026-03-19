@@ -36,16 +36,19 @@ export function FounderSection() {
 
             <div className="flex flex-col gap-4 text-base leading-relaxed text-muted-foreground">
               <p>
-                {"You\u2019re here because you believe your child is capable of more\u2014and you\u2019re absolutely right. They are."}
+                {"You\u2019re here because you believe your child is capable of more \u2014 and you\u2019re absolutely right. They are."}
               </p>
               <p>
-                {"For 25 years, I\u2019ve helped families transform what felt impossible into \"We did it!\" moments. As a specialist in dyslexia and learning differences, I started Reading Resolved because I saw too many brilliant children losing their confidence in a system not designed for them."}
+                {"For 25 years, I\u2019ve helped families transform what once felt impossible into powerful \"We did it!\" moments."}
               </p>
               <p>
-                {"We provide more than lessons\u2014we provide a specialist-led journey that stays with your child from their first breakthrough to the day they truly believe in themselves."}
+                {"As a specialist in dyslexia and learning differences, I started Reading Resolved because I saw too many brilliant children losing their confidence in a system that was never designed for how they learn."}
+              </p>
+              <p>
+                {"We provide more than lessons \u2014 we provide a specialist-led journey that stays with your child from their first breakthrough to the day they truly believe in themselves."}
               </p>
               <p className="rounded-xl bg-accent/50 px-5 py-4 font-medium text-foreground">
-                {"You\u2019ve found the right place. Let\u2019s help your child discover what they\u2019re capable of\u2014together."}
+                {"You\u2019ve found the right place. Let\u2019s help your child discover what they\u2019re capable of \u2014 together."}
               </p>
             </div>
 

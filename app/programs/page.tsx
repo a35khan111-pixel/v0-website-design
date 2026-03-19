@@ -16,9 +16,9 @@ const dyslexiaProgram = {
   title: "Dyslexia Intervention",
   subtitle: "From Avoiding Books to Reading With Ease",
   intro: [
-    "Reading may feel impossible right now -- but it won't be forever.",
-    "This program is for the child who feels stuck while everyone else moves ahead -- the child who avoids books, guesses at words, or melts down over homework. We remove the guessing and the anxiety by teaching reading the way your child's brain actually learns.",
-    'As Orton-Gillingham trained practitioners, we don\'t help children simply cope with dyslexia -- we help them conquer it. This is where symbols begin to make sense, frustration turns into "I got it!", and your child discovers something powerful: "I can actually read."',
+    "Reading may feel impossible right now \u2014 but it won't be forever.",
+    "This program is for the child who feels stuck while everyone else moves ahead \u2014 the child who avoids books, guesses at words, or melts down over homework. We remove the guessing and the anxiety by teaching reading the way your child's brain actually learns.",
+    'As Orton-Gillingham trained practitioners, we don\'t help children simply cope with dyslexia \u2014 we help them conquer it. This is where symbols begin to make sense, frustration turns into "I got it!", and your child discovers something powerful: "I can actually read."',
   ],
   whatChildReceives: [
     "1-on-1 sessions (45 minutes) tailored to your child's specific learning profile",
@@ -27,7 +27,7 @@ const dyslexiaProgram = {
   ],
   parentWin: {
     title: "The Parent Win",
-    text: "No more nightly tears. No more guessing. Just a child who finally has the keys to the world of books -- and the confidence to open them.",
+    text: "No more nightly tears. No more guessing. Just a child who finally has the keys to the world of books \u2014 and the confidence to open them.",
   },
   image: "/images/program-dyslexia.jpg",
   imageAlt: "Child reading with tutor guidance",
@@ -65,8 +65,8 @@ const academicProgram = {
   subtitle: "From Keeping Up to Standing Out",
   intro: [
     "Your child is ready for the next level. Now it's time to help them soar academically.",
-    "Students with learning differences face unique academic challenges -- but with the right strategies and support, they don't just keep up, they excel.",
-    "We provide specialized academic coaching designed for how students with learning differences learn best -- from middle school success to university admissions, we help them advocate for themselves and own their educational future.",
+    "Students with learning differences face unique academic challenges \u2014 but with the right strategies and support, they don't just keep up, they excel.",
+    "We provide specialized academic coaching designed for how students with learning differences learn best \u2014 from middle school success to university admissions, we help them advocate for themselves and own their educational future.",
   ],
   whatChildReceives: [
     "1-on-1 academic tutoring (45 minutes) across all core subjects",
@@ -79,7 +79,7 @@ const academicProgram = {
   ],
   parentWin: {
     title: "The Parent Win",
-    text: "Watching your child stop dreading school and start owning their future. From navigating report cards to choosing a university -- you'll finally have a partner who gets it.",
+    text: "Watching your child stop dreading school and start owning their future. From navigating report cards to choosing a university \u2014 you'll finally have a partner who gets it.",
   },
   image: "/images/program-academic-teen.jpg",
   imageAlt: "Teenager studying confidently at desk with laptop",

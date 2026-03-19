@@ -1,7 +1,7 @@
 import { AboutHero } from '@/components/about-hero'
 import { StorySection } from '@/components/story-section'
 import { TeamSection } from '@/components/team-section'
-import { CTASection } from '@/components/cta-section'
+import { AboutCTA } from '@/components/about-cta'
 
 export default function AboutPage() {
   return (
@@ -9,7 +9,7 @@ export default function AboutPage() {
       <AboutHero />
       <StorySection />
       <TeamSection />
-      <CTASection />
+      <AboutCTA />
     </main>
   )
 }

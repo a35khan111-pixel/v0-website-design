@@ -11,7 +11,7 @@ export function AboutHero() {
           src="/images/about-hero.jpg"
           alt="Child writing confidently"
           fill
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
           className="object-cover"
           priority
         />
@@ -27,13 +27,10 @@ export function AboutHero() {
             </span>
           </div>
           <h1 className="font-serif text-4xl leading-tight text-balance md:text-5xl lg:text-6xl">
-            Every Child Who Feels{" "}
-            <span className="text-primary">
-              {"They're \"Not Smart Enough\""}
-            </span>
+            {"Every Child Who Feels They\u2019re \"Not Smart Enough\" Deserves Someone Who Sees Their Brilliance"}
           </h1>
-          <p className="mt-6 text-2xl font-medium text-balance text-muted-foreground md:text-3xl">
-            Deserves Someone Who Sees Their Brilliance
+          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+            {"For over 25 years, Reading Resolved has helped struggling learners rebuild their skills, their confidence, and their belief in themselves. Because when a child begins to see their own potential again, everything changes."}
           </p>
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <Button asChild size="lg" className="text-base shadow-lg shadow-primary/20">

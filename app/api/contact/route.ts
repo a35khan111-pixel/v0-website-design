@@ -9,6 +9,14 @@ export async function POST(request: Request) {
 
     const { firstName, lastName, email, phone, subject, message } = body
 
+    // Validate required fields
+    if (!firstName || !lastName || !email || !message) {
+      return NextResponse.json(
+        { error: "Missing required fields" },
+        { status: 400 }
+      )
+    }
+
     const fullName = `${firstName || ""} ${lastName || ""}`.trim()
 
     const htmlContent = `
@@ -45,8 +53,6 @@ export async function POST(request: Request) {
       )
     }
 
-    console.log("[contact] Sending contact email from:", fullName, email)
-
     const { data, error } = await resend.emails.send({
       from: "Reading Resolved <onboarding@resend.dev>",
       to: "readingresolved@gmail.com",
@@ -56,17 +62,14 @@ export async function POST(request: Request) {
     })
 
     if (error) {
-      console.error("[contact] Resend error:", JSON.stringify(error))
       return NextResponse.json(
-        { error: `Failed to send: ${error.message || "Unknown Resend error"}` },
+        { error: error.message || "Failed to send email" },
         { status: 500 }
       )
     }
 
-    console.log("[contact] Email sent successfully. ID:", data?.id)
     return NextResponse.json({ success: true })
   } catch (err) {
-    console.error("[contact] API error:", err instanceof Error ? err.message : err)
     return NextResponse.json(
       { error: err instanceof Error ? err.message : "Something went wrong." },
       { status: 500 }

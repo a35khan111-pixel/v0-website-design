@@ -1,25 +1,35 @@
-import { ArrowRight } from "lucide-react"
-
 const comparisons = [
   {
-    now: "Not eager to read and avoids picking up a book at all costs.",
-    future: "Reading with joy and discovering the stories they used to avoid.",
+    now: "Avoids reading, won't pick up a book",
+    future: "Reads with joy and confidence",
   },
   {
-    now: "Low self-confidence and starting to believe they \u201Ccan\u2019t do it.\u201D",
-    future: "Confidence restored as they realize they have a brilliant mind.",
+    now: "Tries hard but gets overwhelmed and gives up",
+    future: "Reads with ease, calm and growing independence",
   },
   {
-    now: "Spelling struggles that lead to tears and meltdowns.",
-    future: "Spelling with ease using a logic-based system that works.",
+    now: "Low self-confidence, starting to believe they \"can't do it\"",
+    future: "Maintains self-belief and trust in themselves",
   },
   {
-    now: "Great ideas that get stuck and never make it onto the page.",
-    future: "Writing with clarity and expressing big ideas with ease.",
+    now: "Struggles with spelling, avoids, guesses or gives up",
+    future: "Spells with ease, logic and independence",
   },
   {
-    now: "Homework battles and needing help with every single word.",
-    future: "Growing independence and the freedom to thrive on their own.",
+    now: "Has brilliant ideas but freezes when it's time to write",
+    future: "Writes with clarity, organization and expression",
+  },
+  {
+    now: "Guesses words or sounds out slowly and inaccurately",
+    future: "Reads with accuracy, fluency and growing independence",
+  },
+  {
+    now: "Feels different from everyone else, withdrawn and struggles with confidence",
+    future: "Navigates life with confidence and a strong sense of self",
+  },
+  {
+    now: "Avoids challenges, scared of failing",
+    future: "Embraces challenges, believes in themselves and lives life on their own terms",
   },
 ]
 
@@ -27,51 +37,59 @@ export function QualifierSection() {
   return (
     <section className="py-14 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-16">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-serif text-3xl text-foreground md:text-4xl">
-            <span className="text-balance">
-              {"Now that you know where you want to see your child, let\u2019s make it a reality."}
-            </span>
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground md:text-lg">
-            {"You are in the right place if you want your child\u2019s potential to be unlocked. We understand how exhausting it feels when nothing seems to work. Our expertise is in bridging the gap between potential and performance."}
+        {/* Bridge Line */}
+        <div className="mx-auto max-w-3xl text-center mb-10">
+          <p className="text-lg font-semibold text-foreground md:text-xl">
+            No more waiting. Let's start unlocking what has always been there.
           </p>
         </div>
 
-        {/* Section Title */}
-        <div className="mx-auto mt-12 flex max-w-4xl items-center justify-center gap-4">
-          <div className="hidden items-center gap-2 sm:flex">
-            <div className="h-px w-12 bg-border" />
+        {/* Table Heading */}
+        <h2 className="text-center font-serif text-2xl text-foreground md:text-3xl lg:text-4xl mb-8">
+          From Struggle to Strength: The Difference We Make
+        </h2>
+
+        {/* Table Headers - Desktop */}
+        <div className="hidden md:grid md:grid-cols-2 gap-4 mb-4 max-w-4xl mx-auto">
+          <div className="text-center">
+            <span className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
+              Where They Are Now
+            </span>
           </div>
-          <div className="flex items-center gap-4 text-sm font-semibold uppercase tracking-widest">
-            <span className="text-muted-foreground">Where They Are Now</span>
-            <ArrowRight className="h-4 w-4 text-primary" />
-            <span className="text-primary">Where They Can Be</span>
-          </div>
-          <div className="hidden items-center gap-2 sm:flex">
-            <div className="h-px w-12 bg-border" />
+          <div className="text-center">
+            <span className="text-sm font-semibold uppercase tracking-widest text-primary">
+              Where They Can Be
+            </span>
           </div>
         </div>
 
-        {/* Comparison List */}
-        <div className="mx-auto mt-8 flex max-w-5xl flex-col gap-4">
+        {/* Comparison Table */}
+        <div className="mx-auto max-w-4xl flex flex-col gap-3">
           {comparisons.map((item, i) => (
             <div
               key={i}
-              className="grid items-center gap-3 rounded-xl bg-card p-5 ring-1 ring-border md:grid-cols-[1fr_auto_1fr] md:gap-6"
+              className="grid gap-2 md:grid-cols-2 md:gap-4"
             >
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                {item.now}
-              </p>
-              <div className="hidden h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-primary/10 md:flex">
-                <ArrowRight className="h-4 w-4 text-primary" />
+              {/* Left - Where They Are Now (grey chiclet) */}
+              <div className="rounded-xl bg-muted/70 px-5 py-4">
+                {/* Mobile label */}
+                <span className="md:hidden text-xs font-semibold uppercase tracking-wider text-muted-foreground block mb-2">
+                  Where They Are Now
+                </span>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {item.now}
+                </p>
               </div>
-              <div className="flex items-center gap-2 md:hidden">
-                <ArrowRight className="h-3.5 w-3.5 flex-shrink-0 text-primary" />
+              {/* Right - Where They Can Be (teal chiclet) */}
+              <div className="rounded-xl bg-primary px-5 py-4">
+                {/* Mobile label */}
+                <span className="md:hidden text-xs font-semibold uppercase tracking-wider text-primary-foreground/70 block mb-2">
+                  Where They Can Be
+                </span>
+                <p className="text-sm leading-relaxed text-primary-foreground font-medium">
+                  {item.future}
+                </p>
               </div>
-              <p className="text-sm font-medium leading-relaxed text-foreground">
-                {item.future}
-              </p>
             </div>
           ))}
         </div>
