@@ -11,7 +11,7 @@ export function ProgramsHero() {
           src="/images/programs-hero-graduate.jpg"
           alt="Graduate in cap and gown representing the complete learning journey"
           fill
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
           className="object-cover"
           priority
         />
