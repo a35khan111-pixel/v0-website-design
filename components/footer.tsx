@@ -17,8 +17,7 @@ export function Footer() {
               />
             </Link>
             <p className="mt-2 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              Specialized 1-on-1 dyslexia tutoring that finally makes reading
-              click. Serving families for over 25 years.
+              Specialized 1-on-1 dyslexia tutoring that transforms struggling readers into confident learners. Serving families for over 25 years.
             </p>
             <div className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
               <MapPin className="h-3.5 w-3.5 text-primary" />

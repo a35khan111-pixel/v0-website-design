@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import { DM_Sans, DM_Serif_Display } from 'next/font/google'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
@@ -25,11 +26,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: 'Reading Resolved | Specialized Dyslexia Tutoring',
   description:
-    'Specialized 1-on-1 dyslexia tutoring that finally makes reading click. 25+ years of proven results helping children with learning differences.',
+    'Specialized 1-on-1 dyslexia tutoring that transforms struggling readers into confident learners. 25+ years of proven results helping children with learning differences.',
   openGraph: {
     title: 'Reading Resolved | Specialized Dyslexia Tutoring',
     description:
-      'Specialized 1-on-1 dyslexia tutoring that finally makes reading click. 25+ years of proven results.',
+      'Specialized 1-on-1 dyslexia tutoring that transforms struggling readers into confident learners. 25+ years of proven results.',
     type: 'website',
   },
 }
@@ -43,6 +44,34 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="preload" href="/images/logo.png" as="image" />
+        {/* Google Ads Tag */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-442653461"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-442653461');
+          `}
+        </Script>
+        {/* Google Analytics 4 */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-HTPGLSBFWD"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-HTPGLSBFWD');
+          `}
+        </Script>
       </head>
       <body
         className={`${dmSans.variable} ${dmSerif.variable} font-sans antialiased`}

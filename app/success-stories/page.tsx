@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const testimonials = [
   {
     quote: `After going through a number of tutors for my 10-year-old dyslexic daughter without seeing much improvement, we finally found Sakina at Reading Resolved. My daughter started with Sakina about 4 months ago in September 2019. Up until seeing Sakina my daughter strongly resisted reading and became frustrated very quickly.\n\nSince she started tutoring with Sakina I have not only seen a huge difference in her confidence level and her interest in reading, but her reading and writing ability is already improving. About 2 months after starting tutoring, my daughter was planning her sleepover birthday party agenda. What I found brought me to tears. She had written her own party agenda and for the first time, I could understand what she had written. My next "wow" moment came when she recently received a 10th birthday card. She picked it up on her own accord and started reading the words on the card perfectly. My husband and I were in awe. She has come such a long way in her confidence and ability in just a few months. She has a lot of work still ahead and I wouldn\u2019t want anyone else guiding and teaching her other than Sakina. She is making a significant difference in Emily\u2019s life and I\u2019m excited to see how my daughter will continue to develop her reading and writing skills moving forward.\n\nSakina is a warm, welcoming tutor who makes my daughter feel comfortable to move at her own pace. She is fantastic at gauging the level of the child and making sure to keep the child learning at the right level for them, so as not to discourage them from pushing too far or too fast. Anyone would be lucky to get Sakina as their tutor.`,
-    author: "Susan White",
+    author: "Susan White, Parent of Emily",
   },
   {
     quote: `We were at a loss when my son, diagnosed with a learning disability in grade 3, struggled despite trying everything\u2014one-on-one tutoring, Kumon, and other traditional methods. Nothing worked until Sakina became his OG teacher.\n\nHer approach was transformative. Starting from the basics, she used the OG method to meet him where he was and build his skills step by step. In a short time, he went from struggling to pass to writing sentences and thriving in school.\n\nToday, he\u2019s in college\u2014something we couldn\u2019t have imagined a few years ago. Sakina didn\u2019t just teach him; she helped him rebuild his confidence and abilities.\n\nIf your child is struggling and traditional methods aren\u2019t working, try OG\u2014and trust me, Sakina is the best! We\u2019re forever grateful for her life-changing support.`,
@@ -31,7 +31,7 @@ const testimonials = [
   },
   {
     quote: `I can\u2019t speak highly enough of the impact that Reading Resolved has had on my daughters\u2019 education over the past four years. My older daughter began with the program when she was in grade 7, and now as a grade 11 student, she still eagerly looks forward to her structured word inquiry sessions. The program has deeply engaged her in learning, and the progress she\u2019s made is remarkable. Not only has it enhanced her understanding of English, but it has also helped her in other subjects by improving her ability to decipher and understand the meaning of almost every word.\n\nThe cherry on top of my older daughter\u2019s learning experience is the mainstream language tutoring she receives as part of the program. Her instructor is incredibly thorough and never fails to guide her on even the smallest details, from organizing her work to writing in various styles. Their combined approach has truly helped my daughter thrive academically and develop a love for learning that I couldn\u2019t have imagined just a few years ago.\n\nAs for my younger daughter, the program\u2019s impact has been nothing short of miraculous. She has developed an incredible interest in reading, spelling, and discovering the meanings of words. It\u2019s hard to believe that she is now excelling as a grade 4 student, when just a short time ago she struggled to read basic texts at her grade level. Thanks to the program\u2019s guidance and structure, she\u2019s made astounding progress.\n\nBoth of my daughters have come a long way in their learning journeys, and I owe a tremendous amount of gratitude to Reading Resolved for providing such a reliable, supportive platform with instructors who truly go above and beyond. The experience has been so positive that my daughters don\u2019t want to miss a single lesson. Reading Resolved has given them the tools to succeed, and I can\u2019t recommend it highly enough!`,
-    author: "Shireen Saamir",
+    author: "Shireen Saamir, Parent and Reading Resolved family since 2019",
   },
   {
     quote: `Our son is an intelligent college student who, like many young people, doesn\u2019t read books for pleasure. Mild ADHD runs in the family. In his community college classes with heavier reading assignments, I noticed that he avoided reading his textbooks. Instead, he used a \u201Chunt and peck\u201D method to find answers to his reading assignments. A family member recommended the Orton-Gillingham method to help him become more efficient at reading.\n\nSakina Khan works well with young adults and aspiring professionals who wish to improve their learning efficiency. Using an online format, she understands how to connect with this demographic. She does a very good job keeping the fun in the work while staying on task and getting the work done.\n\nMy son looks forward to working with Sakina. He is making good progress in his reading assignments, and there are fewer complaints about school! He recently (and surprisingly!) decided to attend University after earning his Associate\u2019s Degree. I give credit to Sakina for helping him to develop this new confidence, and to him for doing the exercises with Sakina, to improve his capabilities. As a parent, I am very hopeful about his academic future.`,
@@ -63,7 +63,7 @@ function StarRating() {
   return (
     <div className="flex items-center gap-0.5">
       {[...Array(5)].map((_, i) => (
-        <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+        <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
       ))}
     </div>
   )
@@ -84,7 +84,7 @@ export default function SuccessStoriesPage() {
             </span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-background/70">
-            {"See how we\u2019ve helped hundreds of families transform struggle into breakthrough moments\u2014in their own words."}
+            {"See how we\u2019ve helped hundreds of families transform struggle into breakthrough moments, in their own words."}
           </p>
         </div>
       </section>

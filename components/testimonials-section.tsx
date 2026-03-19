@@ -13,13 +13,8 @@ const testimonials = [
   },
   {
     quote:
-      "My daughter is now reading chapter books, which was once just a dream. Sakina has a rare ability to balance a specialized curriculum with the heart and motivation a child needs.",
-    author: "Samira, High School Teacher",
-  },
-  {
-    quote:
-      "My son went from avoiding textbooks to choosing University. I give credit to Sakina for helping him develop this new confidence.",
-    author: "Karen, USA",
+      "With your guidance and support, my son's dream of going to university for engineering has become a reality. He will be beginning Water Resource Engineering at the University of Guelph this fall.",
+    author: "Julia P.",
   },
 ]
 
@@ -61,10 +56,10 @@ export function TestimonialsSection() {
             key={current}
             className="animate-fade-in"
           >
-            {/* 5-Star Rating */}
+            {/* 5-Star Rating - Gold */}
             <div className="mb-6 flex items-center gap-1">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                <Star key={i} className="h-5 w-5 fill-amber-400 text-amber-400" />
               ))}
             </div>
 
@@ -76,7 +71,7 @@ export function TestimonialsSection() {
 
             <div className="mt-8 border-t border-border pt-6">
               <p className="font-serif text-lg italic text-foreground">
-                {"— "}{testimonial.author}
+                {testimonial.author}
               </p>
             </div>
           </div>

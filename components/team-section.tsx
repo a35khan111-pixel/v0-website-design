@@ -37,7 +37,7 @@ const teamMembers = [
     bio: "Drawing on more than two decades as a curriculum leader within the Peel District School Board, Samira knows exactly how schools work and how to make them work for your child. She specializes in academic coaching, IEP advocacy, strategic curriculum planning, and university admissions guidance.",
   },
   {
-    name: "Tracey Bower",
+    name: "Tracey Bowes",
     initials: "TB",
     title: "Lead Structured Literacy Specialist",
     credentials: [
@@ -76,8 +76,7 @@ export function TeamSection() {
             <span className="text-primary">Every Breakthrough</span>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground leading-relaxed">
-            A collective 100+ years of experience dedicated to one mission:
-            helping your child discover their brilliance.
+            A collective 100+ years of educational experience dedicated to helping your child discover their brilliance.
           </p>
         </div>
 

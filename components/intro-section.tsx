@@ -9,17 +9,27 @@ export function IntroSection() {
           <div className="h-px w-12 bg-primary/40" />
         </div>
 
-        <h2 className="font-serif text-3xl text-foreground md:text-4xl">
-          <span className="text-balance">
-            With 25+ years of experience, we have mastered the art of unlocking the dyslexic brain.
-          </span>
-        </h2>
-        <div className="mt-8 flex flex-col gap-5 text-base leading-relaxed text-muted-foreground md:text-lg">
+        <div className="flex flex-col gap-5 text-base leading-relaxed text-muted-foreground md:text-lg text-left">
           <p>
-            {"Our approach isn\u2019t about following a script. It\u2019s about finding the gaps, pulling the right threads, and untangling the frustration that has been holding them back."}
+            {"If you\u2019ve found us, something brought you here \u2014 a parent\u2019s instinct that your child deserves more than what they\u2019re getting."}
           </p>
           <p>
-            {"Using proven methods like Orton-Gillingham and other structured literacy approaches, we turn your vision for your child into a living reality."}
+            {"You\u2019ve been trying hard. But nothing has worked. Yet. And now you\u2019re exhausted, frustrated and afraid."}
+          </p>
+          <p>
+            {"Afraid they\u2019re starting to believe they can\u2019t. Or worse \u2014 that they\u2019ve stopped trying."}
+          </p>
+          <p>
+            {"Thousands of parents have sat exactly where you are. And then they discovered there was another way. One built for exactly how their child learns."}
+          </p>
+          <p>
+            {"The breakthrough that turns a struggling child into one who is academically strong, deeply confident, and able to navigate life\u2019s choices on their own terms."}
+          </p>
+          <p>
+            {"And right now \u2014 you are taking the first step. The one that unlocks everything."}
+          </p>
+          <p className="text-center font-semibold text-foreground text-xl md:text-2xl mt-4">
+            {"Your child isn\u2019t the problem. The method they were taught with is."}
           </p>
         </div>
       </div>

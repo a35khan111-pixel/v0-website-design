@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, X } from "lucide-react"
 
@@ -29,7 +30,7 @@ export function StickyCTA() {
               Limited spots available each month
             </p>
           </div>
-          <div className="flex flex-1 items-center justify-center gap-3 sm:flex-none sm:justify-end">
+          <div className="flex flex-1 items-center justify-center gap-2 sm:flex-none sm:justify-end sm:gap-3">
             <Button asChild size="sm" className="shadow-lg shadow-primary/20">
               <a
                 href="https://calendly.com/readingresolved/free-consultation-understanding-your-child-s-needs"
@@ -39,6 +40,11 @@ export function StickyCTA() {
                 Book My Free Consultation
                 <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
               </a>
+            </Button>
+            <Button asChild size="sm" variant="outline" className="border-primary text-primary hover:bg-primary/5">
+              <Link href="/contact">
+                Send Us a Message
+              </Link>
             </Button>
             <button
               onClick={() => setDismissed(true)}

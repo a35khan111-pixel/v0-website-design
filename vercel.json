@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/dyslexia-support",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
+}

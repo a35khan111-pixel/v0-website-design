@@ -6,10 +6,9 @@ const plans = [
   {
     icon: BookOpen,
     name: "Dyslexia Intervention",
-    duration: "45 min sessions",
+    duration: "45-minute sessions",
     price: "$70",
     unit: "per session",
-    description: "1-on-1 Orton-Gillingham based sessions tailored to your child\u2019s unique learning needs.",
     features: [
       "Personalized learning profile",
       "Phonemic awareness & phonics",
@@ -19,11 +18,10 @@ const plans = [
   },
   {
     icon: GraduationCap,
-    name: "Advanced Academic Support",
-    duration: "45 min sessions",
+    name: "Academic Support",
+    duration: "45-minute sessions",
     price: "$70",
     unit: "per session",
-    description: "Subject-specific tutoring for grades 3\u201312 with strategies for classroom independence.",
     features: [
       "All core subjects covered",
       "Study skills & executive functioning",
@@ -34,10 +32,9 @@ const plans = [
   {
     icon: Heart,
     name: "Life Coaching",
-    duration: "60 min sessions",
-    price: "$95",
+    duration: "60-minute sessions",
+    price: "$125",
     unit: "per session",
-    description: "Build emotional intelligence, self-advocacy, and confidence for pre-teens and teens.",
     features: [
       "Confidence & goal-setting",
       "Peer pressure navigation",
@@ -63,7 +60,7 @@ export function PricingSection() {
             A Lifetime of Impact.
           </p>
           <p className="mt-4 text-base leading-relaxed text-background/60">
-            {"No hidden fees. No complicated tiers. Choose the support your child needs\u2014or grow with us through all three."}
+            {"No hidden fees. No complicated tiers. Most families invest in two sessions per week. The average student stays with us for 12+ months \u2014 and the results last a lifetime."}
           </p>
         </div>
 
@@ -72,22 +69,10 @@ export function PricingSection() {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative flex flex-col rounded-2xl p-8 transition-transform duration-300 hover:-translate-y-1 ${
-                plan.featured
-                  ? "bg-primary text-primary-foreground ring-2 ring-primary shadow-2xl shadow-primary/20"
-                  : "bg-background/10 text-background ring-1 ring-background/20"
-              }`}
+              className="relative flex flex-col rounded-2xl p-8 transition-transform duration-300 hover:-translate-y-1 bg-background/10 text-background ring-1 ring-background/20"
             >
-              {plan.featured && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="rounded-full bg-background px-4 py-1 text-xs font-bold uppercase tracking-wider text-primary">
-                    Most Popular
-                  </span>
-                </div>
-              )}
-
               <div className="flex items-center gap-3">
-                <plan.icon className={`h-5 w-5 ${plan.featured ? "text-primary-foreground" : "text-primary"}`} />
+                <plan.icon className="h-5 w-5 text-primary" />
                 <span className="text-xs font-semibold uppercase tracking-wider opacity-80">
                   {plan.duration}
                 </span>
@@ -95,43 +80,44 @@ export function PricingSection() {
               <h3 className="mt-4 font-serif text-xl">{plan.name}</h3>
               <div className="mt-4 flex items-baseline gap-1">
                 <span className="font-serif text-4xl">{plan.price}</span>
-                <span className={`text-sm ${plan.featured ? "text-primary-foreground/70" : "text-background/50"}`}>
+                <span className="text-sm text-background/50">
                   {plan.unit}
                 </span>
               </div>
-              <p className={`mt-4 text-sm leading-relaxed ${plan.featured ? "text-primary-foreground/85" : "text-background/60"}`}>
-                {plan.description}
-              </p>
 
               {/* Feature List */}
               <ul className="mt-6 flex flex-1 flex-col gap-3">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-center gap-2.5">
-                    <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${
-                      plan.featured ? "bg-primary-foreground/20" : "bg-primary/20"
-                    }`}>
-                      <Check className={`h-3 w-3 ${plan.featured ? "text-primary-foreground" : "text-primary"}`} />
+                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/20">
+                      <Check className="h-3 w-3 text-primary" />
                     </span>
-                    <span className={`text-sm ${plan.featured ? "text-primary-foreground/90" : "text-background/70"}`}>
+                    <span className="text-sm text-background/70">
                       {feature}
                     </span>
                   </li>
                 ))}
               </ul>
 
-              <Button
-                asChild
-                className={`mt-8 w-full ${
-                  plan.featured
-                    ? "bg-background text-foreground hover:bg-background/90 shadow-lg"
-                    : "bg-primary text-primary-foreground hover:bg-primary/90"
-                }`}
-              >
-                <a href="https://calendly.com/readingresolved/free-consultation-understanding-your-child-s-needs" target="_blank" rel="noopener noreferrer">
-                  Book My Free Consultation
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
+              <div className="mt-8 flex flex-col gap-3">
+                <Button
+                  asChild
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
+                >
+                  <a href="https://calendly.com/readingresolved/free-consultation-understanding-your-child-s-needs" target="_blank" rel="noopener noreferrer">
+                    Book My Free Consultation
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="w-full border-background/30 text-background hover:bg-background/10"
+                >
+                  <Link href="/contact">
+                    Send Us a Message
+                  </Link>
+                </Button>
+              </div>
             </div>
           ))}
         </div>
