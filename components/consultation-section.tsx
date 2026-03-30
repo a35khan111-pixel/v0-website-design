@@ -2,9 +2,9 @@ import { Ear, Search, Map } from "lucide-react"
 
 export function ConsultationSection() {
   return (
-    <section className="bg-muted/50 py-14 lg:py-20">
+    <section className="bg-muted/50 py-10 lg:py-14">
       <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-16">
-        <div className="mx-auto max-w-3xl text-center mb-12">
+        <div className="mx-auto max-w-3xl text-center mb-8">
           <h2 className="font-serif text-3xl text-foreground md:text-4xl">
             What Happens in Your Free Consultation
           </h2>

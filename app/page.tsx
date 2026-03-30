@@ -1,7 +1,4 @@
 import { HeroSection } from "@/components/hero-section"
-import { IntroSection } from "@/components/intro-section"
-import { QualifierSection } from "@/components/qualifier-section"
-import { TransitionSection } from "@/components/transition-section"
 import { ProgramsSection } from "@/components/programs-section"
 import { FounderSection } from "@/components/founder-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
@@ -15,9 +12,6 @@ export default function Home() {
     <>
       <main>
         <HeroSection />
-        <IntroSection />
-        <QualifierSection />
-        <TransitionSection />
         <ProgramsSection />
         <FounderSection />
         <TestimonialsSection />

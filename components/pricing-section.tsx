@@ -64,6 +64,11 @@ export function PricingSection() {
           </p>
         </div>
 
+        {/* Progress Line */}
+        <p className="mb-8 text-center text-base text-background/70 md:text-lg">
+          Most families begin seeing meaningful progress within the first few months.
+        </p>
+
         {/* Pricing Cards */}
         <div className="grid gap-6 md:grid-cols-3">
           {plans.map((plan) => (

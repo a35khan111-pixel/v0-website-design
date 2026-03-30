@@ -1,3 +1,4 @@
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Phone, Mail } from "lucide-react"
 
@@ -24,12 +25,15 @@ export function AboutCTA() {
           {"With the right instruction and encouragement, struggling readers become confident learners who believe in themselves again. And it all begins with one conversation."}
         </p>
 
-        <div className="mt-10">
+        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Button size="lg" asChild className="text-base shadow-lg shadow-primary/20">
             <a href="https://calendly.com/readingresolved/free-consultation-understanding-your-child-s-needs" target="_blank" rel="noopener noreferrer">
               Book My Free Consultation
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
+          </Button>
+          <Button variant="outline" size="lg" asChild className="text-base border-primary text-primary hover:bg-primary/5">
+            <Link href="/contact">Send Us a Message</Link>
           </Button>
         </div>
 

@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Star } from "lucide-react"
+import { ArrowRight, Star, Check } from "lucide-react"
 
 export function HeroSection() {
   return (
@@ -9,10 +9,10 @@ export function HeroSection() {
       {/* Mobile Hero Image - visible only on small screens */}
       <div className="relative aspect-[16/10] w-full lg:hidden">
         <Image
-  src="/images/hero-child.jpg"
-  alt="Tutor working one-on-one with a child"
-  fill
-  sizes="(max-width: 1024px) 100vw, 50vw"
+          src="/images/hero-child.jpg"
+          alt="Tutor working one-on-one with a child"
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
           className="object-cover"
           priority
         />
@@ -59,7 +59,7 @@ export function HeroSection() {
             </div>
 
             <p className="max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
-              25+ years of specialized 1-on-1 dyslexia instruction, turning frustration into confidence.
+              25+ years of specialized 1-on-1 dyslexia instruction, turning reading struggles into success stories.
             </p>
 
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -73,11 +73,6 @@ export function HeroSection() {
                 <Link href="/contact">Send Us a Message</Link>
               </Button>
             </div>
-
-            {/* Micro Trust Line */}
-            <p className="text-sm text-muted-foreground">
-              Free consultation · No pressure · Just clarity
-            </p>
 
             {/* Stats Bar */}
             <div className="mt-2 flex items-center justify-between rounded-2xl bg-card p-4 shadow-sm ring-1 ring-border sm:justify-start sm:gap-8 sm:p-6">
@@ -135,6 +130,70 @@ export function HeroSection() {
             {/* Decorative dot pattern */}
             <div className="absolute -right-4 -top-4 -z-10 h-32 w-32 rounded-2xl bg-primary/10" />
           </div>
+        </div>
+      </div>
+
+      {/* New Intro Section - directly after hero */}
+      <div className="bg-card py-8 lg:py-12">
+        <div className="mx-auto max-w-3xl px-6">
+          <div className="flex flex-col gap-4 text-base leading-relaxed text-muted-foreground md:text-lg">
+            <p>
+              Deep down, you know your child is capable of so much more. Much more confidence, much higher grades and much more happiness.
+            </p>
+            <p>
+              {"But somewhere along the way, they stopped believing they could. You watched it happen \u2014 slowly, quietly. One failed attempt at a time. Now, homework and reading have become an arena of anxiety and frustration."}
+            </p>
+            <p>
+              {"You\u2019ve tried everything \u2014 extra help, more encouragement, and even traditional tutoring. But nothing has worked well enough. Yet."}
+            </p>
+            <p>
+              {"You are not alone. Thousands of parents have stood in this exact spot: exhausted, frustrated, and afraid of what comes next. But that story doesn\u2019t have to end here."}
+            </p>
+          </div>
+
+          {/* Bullet Section */}
+          <div className="mt-6">
+            <h3 className="mb-4 font-serif text-lg text-foreground md:text-xl">
+              You might be seeing things like:
+            </h3>
+            <ul className="flex flex-col gap-2.5">
+              {[
+                "Avoids reading or refuses to pick up a book",
+                "Is bright but struggling to keep up",
+                "Guesses words instead of reading them",
+                "Has great ideas but can't get them on paper",
+                "Is starting to say \"I can't do this\"",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10">
+                    <Check className="h-3 w-3 text-primary" />
+                  </span>
+                  <span className="text-sm leading-relaxed text-muted-foreground md:text-base">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Closing */}
+          <div className="mt-6 flex flex-col gap-4 text-base leading-relaxed text-muted-foreground md:text-lg">
+            <p className="font-medium text-foreground">
+              {"If this feels familiar \u2014 you are in the right place."}
+            </p>
+            <p>
+              {"For over 25 years, we\u2019ve helped children go from shutting down to reading with confidence most parents thought they\u2019d lost. We invite you to take the first step \u2014 explore our programs below or book a free consultation. Let\u2019s begin rewriting the story."}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Teal Banner */}
+      <div className="bg-primary py-8 lg:py-10">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <p className="font-serif text-xl text-primary-foreground md:text-2xl lg:text-3xl">
+            A Partnership Built for Every Milestone
+          </p>
         </div>
       </div>
     </section>

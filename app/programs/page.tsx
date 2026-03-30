@@ -29,8 +29,8 @@ const dyslexiaProgram = {
     title: "The Parent Win",
     text: "No more nightly tears. No more guessing. Just a child who finally has the keys to the world of books \u2014 and the confidence to open them.",
   },
-  image: "/images/program-dyslexia.jpg",
-  imageAlt: "Child reading with tutor guidance",
+  image: "/images/program-dyslexia-tutor.jpg",
+  imageAlt: "Female tutor working one-on-one with a young child at a table",
 }
 
 const dyscalculiaProgram = {
@@ -81,8 +81,8 @@ const academicProgram = {
     title: "The Parent Win",
     text: "Watching your child stop dreading school and start owning their future. From navigating report cards to choosing a university \u2014 you'll finally have a partner who gets it.",
   },
-  image: "/images/program-academic-teen.jpg",
-  imageAlt: "Teenager studying confidently at desk with laptop",
+  image: "/images/program-teen-student.jpg",
+  imageAlt: "High school student studying at desk with books and laptop",
 }
 
 const coachingProgram = {
