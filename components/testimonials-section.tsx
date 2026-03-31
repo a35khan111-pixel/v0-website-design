@@ -36,10 +36,10 @@ export function TestimonialsSection() {
   const testimonial = testimonials[current]
 
   return (
-    <section className="bg-background py-14 lg:py-20">
+    <section className="bg-background py-10 lg:py-14">
       <div className="mx-auto max-w-4xl px-6">
         {/* Header */}
-        <div className="mb-12 text-center">
+        <div className="mb-8 text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
             Success Stories
           </p>
@@ -121,7 +121,7 @@ export function TestimonialsSection() {
         </div>
 
         {/* View All CTA */}
-        <div className="mt-8 text-center">
+        <div className="mt-5 text-center">
           <Button variant="outline" size="lg" asChild className="text-base">
             <Link href="/success-stories">
               View All Success Stories

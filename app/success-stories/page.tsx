@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import Link from "next/link"
 import { Star, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -39,7 +40,7 @@ const testimonials = [
   },
   {
     quote: `I can\u2019t recommend Reading Resolved highly enough! This academy is a game-changer for children needing support in reading, writing, math, or comprehension. Their personalized, evidence-based approach, including Orton-Gillingham and Structured Word Inquiry, is truly remarkable.\n\nFrom dyslexia tutoring to dyscalculia and dysgraphia support, their expertise helps students grow into confident, capable learners. Their academic coaching also builds essential skills like time management, exam prep, and post-secondary planning.\n\nWhether your child is catching up or aiming to excel, Reading Resolved is the perfect place to thrive. Highly recommended!`,
-    author: "Sana Musaddiqi",
+    author: "Sana Musaddiq",
   },
   {
     quote: `We have worked with Sakina Khan and Reading Resolved for many years. My daughter is engaged in her lessons and I truly appreciate the style of teaching used by the instructors. My daughter actually finds the lessons fun.\n\nThey build comfortable relationships and use it as a platform for learning. The attention paid to my daughter makes her feel cared for and has helped to build her confidence. I have definitely seen a positive progression in her reading abilities. Reading Resolved has been a worthwhile investment in my daughter\u2019s success.`,
@@ -133,7 +134,7 @@ export default function SuccessStoriesPage() {
           <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
             {"Join hundreds of families who\u2019ve transformed struggle into confidence."}
           </p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button size="lg" asChild className="text-base shadow-lg shadow-primary/20">
               <a
                 href="https://calendly.com/readingresolved/free-consultation-understanding-your-child-s-needs"
@@ -143,6 +144,9 @@ export default function SuccessStoriesPage() {
                 Book My Free Consultation
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
+            </Button>
+            <Button variant="outline" size="lg" asChild className="text-base border-primary text-primary hover:bg-primary/5">
+              <Link href="/contact">Send Us a Message</Link>
             </Button>
           </div>
         </div>

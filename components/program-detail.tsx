@@ -55,27 +55,27 @@ export function ProgramDetail({
           </p>
         </div>
 
-        {/* Content Grid */}
+        {/* Content Grid - 50/50 split */}
         <div
-          className={`flex flex-col items-center gap-8 lg:gap-12 ${
-            reversed ? "lg:flex-row-reverse" : "lg:flex-row"
+          className={`flex flex-col gap-8 lg:flex-row lg:gap-12 ${
+            reversed ? "lg:flex-row-reverse" : ""
           }`}
         >
-          {/* Image */}
-          <div className="relative w-full overflow-hidden rounded-2xl shadow-lg lg:w-5/12">
-            <div className="aspect-[4/3]">
+          {/* Image - 50% width on desktop, full width on mobile */}
+          <div className="relative w-full lg:w-1/2">
+            <div className="relative h-full min-h-[300px] overflow-hidden rounded-2xl shadow-lg lg:min-h-full">
               <Image
                 src={image}
                 alt={imageAlt}
                 fill
-                sizes="(max-width: 1024px) 100vw, 42vw"
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
           </div>
 
-          {/* Text Content */}
-          <div className="w-full lg:w-7/12">
+          {/* Text Content - 50% width on desktop */}
+          <div className="w-full lg:w-1/2">
             {/* Intro paragraphs */}
             <div className="flex flex-col gap-4">
               {intro.map((paragraph, i) => (
@@ -129,13 +129,16 @@ export function ProgramDetail({
               </p>
             </div>
 
-            {/* CTA */}
-            <div className="mt-8">
+            {/* CTA - Dual Buttons */}
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button asChild size="lg" className="shadow-lg shadow-primary/20">
                 <a href="https://calendly.com/readingresolved/free-consultation-understanding-your-child-s-needs" target="_blank" rel="noopener noreferrer">
                   Book My Free Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
+              </Button>
+              <Button variant="outline" size="lg" asChild className="border-primary text-primary hover:bg-primary/5">
+                <Link href="/contact">Send Us a Message</Link>
               </Button>
             </div>
           </div>
