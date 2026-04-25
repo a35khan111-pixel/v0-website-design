@@ -34,12 +34,12 @@ export function HeroSection() {
               <span className="text-primary">·</span>
               <span>Dyslexia Specialists</span>
               <span className="text-primary">·</span>
-              <span>Trusted by Hundreds of Families</span>
+              <span>School Curriculum Aligned</span>
             </div>
 
             <h1 className="font-serif text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
               <span className="text-balance">
-                {"Your Child Isn\u2019t Broken."}
+                {"Your Child CAN Read."}
               </span>
               <br />
               <span className="text-primary">
@@ -59,7 +59,7 @@ export function HeroSection() {
             </div>
 
             <p className="max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
-              25+ years of specialized 1-on-1 dyslexia instruction, turning reading struggles into success stories.
+              Expert reading specialists, educational consultants and life coaches helping your child master learning and life.
             </p>
 
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -74,39 +74,28 @@ export function HeroSection() {
               </Button>
             </div>
 
-            {/* Stats Bar */}
-            <div className="mt-2 flex items-center justify-between rounded-2xl bg-card p-4 shadow-sm ring-1 ring-border sm:justify-start sm:gap-8 sm:p-6">
+            {/* Stats Bar - reduced spacing with mt-1 */}
+            <div className="mt-1 flex items-center justify-between rounded-2xl bg-card p-4 shadow-sm ring-1 ring-border sm:justify-start sm:gap-8 sm:p-6">
               <div className="flex flex-col items-center">
-                <span className="font-serif text-2xl text-primary sm:text-3xl">25+</span>
-                <span className="mt-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground sm:text-xs">
-                  Years Experience
+                <span className="font-serif text-xl text-primary sm:text-2xl">25+ Years</span>
+                <span className="text-[10px] font-medium text-muted-foreground sm:text-xs">
+                  Experience
                 </span>
               </div>
               <div className="h-10 w-px bg-border sm:h-12" />
               <div className="flex flex-col items-center">
-                <span className="font-serif text-2xl text-primary sm:text-3xl">100s</span>
-                <span className="mt-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground sm:text-xs">
+                <span className="font-serif text-xl text-primary sm:text-2xl">773</span>
+                <span className="text-[10px] font-medium text-muted-foreground sm:text-xs">
                   Families Transformed
                 </span>
               </div>
               <div className="h-10 w-px bg-border sm:h-12" />
               <div className="flex flex-col items-center">
-                <span className="font-serif text-2xl text-primary sm:text-3xl">1:1</span>
-                <span className="mt-1 text-[10px] font-medium uppercase tracking-wider text-muted-foreground sm:text-xs">
-                  Always
+                <span className="font-serif text-xl text-primary sm:text-2xl">Certified</span>
+                <span className="text-[10px] font-medium text-muted-foreground sm:text-xs">
+                  Teachers
                 </span>
               </div>
-            </div>
-
-            {/* Mini Testimonial */}
-            <div className="mt-2 flex items-start gap-3 rounded-xl bg-card px-5 py-4 ring-1 ring-border">
-              <span className="mt-0.5 text-2xl leading-none text-primary/60">{"\u201C"}</span>
-              <p className="text-sm italic leading-relaxed text-muted-foreground">
-                Within 3 months, my daughter went from crying over homework to reading on her own.
-                <span className="mt-1 block text-xs font-medium not-italic text-foreground/70">
-                  Raluca M., Parent of Grade 3 Student
-                </span>
-              </p>
             </div>
           </div>
 
@@ -138,51 +127,53 @@ export function HeroSection() {
         <div className="mx-auto max-w-3xl px-6">
           <div className="flex flex-col gap-4 text-base leading-relaxed text-muted-foreground md:text-lg">
             <p>
-              Deep down, you know your child is capable of so much more. Much more confidence, much higher grades and much more happiness.
-            </p>
-            <p>
-              {"But somewhere along the way, they stopped believing they could. You watched it happen \u2014 slowly, quietly. One failed attempt at a time. Now, homework and reading have become an arena of anxiety and frustration."}
-            </p>
-            <p>
-              {"You\u2019ve tried everything \u2014 extra help, more encouragement, and even traditional tutoring. But nothing has worked well enough. Yet."}
-            </p>
-            <p>
-              {"You are not alone. Thousands of parents have stood in this exact spot: exhausted, frustrated, and afraid of what comes next. But that story doesn\u2019t have to end here."}
+              At Reading Resolved, we specialize in <strong className="text-foreground">Orton-Gillingham dyslexia intervention</strong>, the gold standard for struggling readers. Our evidence-based approach builds reading, spelling, and deep literacy skills that last a lifetime. Students with dyslexia and learning differences rewire their brains to thrive. <strong className="text-foreground">The Orton-Gillingham approach transforms frustration into strong literacy skills, confidence, and independence.</strong>
             </p>
           </div>
 
-          {/* Bullet Section */}
+          {/* Results Section */}
           <div className="mt-6">
-            <h3 className="mb-4 font-serif text-lg text-foreground md:text-xl">
-              You might be seeing things like:
+            <h3 className="mb-4 font-serif text-lg font-bold text-foreground md:text-xl">
+              Results you will see:
             </h3>
-            <ul className="flex flex-col gap-2.5">
-              {[
-                "Avoids reading or refuses to pick up a book",
-                "Is bright but struggling to keep up",
-                "Guesses words instead of reading them",
-                "Has great ideas but can't get them on paper",
-                "Is starting to say \"I can't do this\"",
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary/10">
-                    <Check className="h-3 w-3 text-primary" />
-                  </span>
-                  <span className="text-sm leading-relaxed text-muted-foreground md:text-base">
-                    {item}
-                  </span>
-                </li>
-              ))}
+            <ul className="flex flex-col gap-3">
+              <li className="flex items-start gap-3">
+                <span className="mt-0.5 text-primary">✓</span>
+                <span className="text-sm leading-relaxed text-muted-foreground md:text-base">
+                  <strong className="text-foreground">Picks up books willingly.</strong> Reading becomes something they choose, not avoid.
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-0.5 text-primary">✓</span>
+                <span className="text-sm leading-relaxed text-muted-foreground md:text-base">
+                  <strong className="text-foreground">Keeps up and catches up.</strong> Matches or exceeds grade-level expectations.
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-0.5 text-primary">✓</span>
+                <span className="text-sm leading-relaxed text-muted-foreground md:text-base">
+                  <strong className="text-foreground">Reads words accurately.</strong> Decodes with precision instead of guessing.
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-0.5 text-primary">✓</span>
+                <span className="text-sm leading-relaxed text-muted-foreground md:text-base">
+                  <strong className="text-foreground">Writes ideas confidently.</strong> Translates thoughts to paper with clarity.
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-0.5 text-primary">✓</span>
+                <span className="text-sm leading-relaxed text-muted-foreground md:text-base">
+                  <strong className="text-foreground">{"Says \"I can do this.\""}</strong> Replaces self-doubt with genuine belief.
+                </span>
+              </li>
             </ul>
           </div>
 
-          {/* Closing */}
-          <div className="mt-6 flex flex-col gap-4 text-base leading-relaxed text-muted-foreground md:text-lg">
-            <p className="font-medium text-foreground">
-              {"If this feels familiar \u2014 you are in the right place."}
-            </p>
-            <p>
-              {"For over 25 years, we\u2019ve helped children go from shutting down to reading with confidence most parents thought they\u2019d lost. We invite you to take the first step \u2014 explore our programs below or book a free consultation. Let\u2019s begin rewriting the story."}
+          {/* Bridge to Programs */}
+          <div className="mt-6 text-center">
+            <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
+              Ready to get started? Explore our three programs below, or book a free consultation to find the perfect fit for your child.
             </p>
           </div>
         </div>
