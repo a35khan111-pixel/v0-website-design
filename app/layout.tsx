@@ -3,6 +3,7 @@ import Script from 'next/script'
 import { DM_Sans, DM_Serif_Display } from 'next/font/google'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
+import { AnalyticsTracker } from '@/components/analytics-tracker'
 
 import './globals.css'
 
@@ -76,6 +77,7 @@ export default function RootLayout({
       <body
         className={`${dmSans.variable} ${dmSerif.variable} font-sans antialiased`}
       >
+        <AnalyticsTracker />
         <Navbar />
         {children}
         <Footer />

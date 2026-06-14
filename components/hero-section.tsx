@@ -127,7 +127,16 @@ export function HeroSection() {
         <div className="mx-auto max-w-3xl px-6">
           <div className="flex flex-col gap-4 text-base leading-relaxed text-muted-foreground md:text-lg">
             <p>
-              At Reading Resolved, we specialize in <strong className="text-foreground">Orton-Gillingham dyslexia intervention</strong>, the gold standard for struggling readers. Our evidence-based approach builds reading, spelling, and deep literacy skills that last a lifetime. Students with dyslexia and learning differences rewire their brains to thrive. <strong className="text-foreground">The Orton-Gillingham approach transforms frustration into strong literacy skills, confidence, and independence.</strong>
+              Our heart lies in supporting students who struggle with reading, writing, or spelling by bridging their learning gaps so they can reach their full potential.
+            </p>
+            <p>
+              We do this by combining the absolute gold standards of clinical literacy intervention: the <strong className="text-foreground">Orton-Gillingham Approach</strong> and <strong className="text-foreground">Structured Word Inquiry (SWI)</strong>.
+            </p>
+            <p>
+              By providing highly structured, therapeutic instruction, we don&apos;t just teach children to memorize words: we show them how language actually works, building real, lasting gains in decoding, spelling accuracy, and deep comprehension, guiding your child back to grade level and beyond.
+            </p>
+            <p>
+              <strong className="text-foreground">We are here to prove what you&apos;ve known all along: your child CAN read. They just needed the right instruction.</strong>
             </p>
           </div>
 
@@ -176,15 +185,6 @@ export function HeroSection() {
               Ready to get started? Explore our three programs below, or book a free consultation to find the perfect fit for your child.
             </p>
           </div>
-        </div>
-      </div>
-
-      {/* Teal Banner */}
-      <div className="bg-primary py-8 lg:py-10">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <p className="font-serif text-xl text-primary-foreground md:text-2xl lg:text-3xl">
-            A Partnership Built for Every Milestone
-          </p>
         </div>
       </div>
     </section>
