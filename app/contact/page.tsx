@@ -56,6 +56,11 @@ export default function ContactPage() {
         throw new Error(data.error || "Failed to send message.")
       }
 
+      // GA4 key event: successful contact form submission
+      window.gtag?.("event", "contact_form_submit", {
+        page_location: "/contact",
+      })
+
       setSubmitted(true)
     } catch (err) {
       setSubmitError(err instanceof Error ? err.message : "Something went wrong. Please try again.")

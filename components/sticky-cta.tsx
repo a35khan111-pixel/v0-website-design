@@ -18,6 +18,19 @@ export function StickyCTA() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  // Add bottom padding to the page so the fixed bar never covers content
+  useEffect(() => {
+    const showing = visible && !dismissed
+    if (showing) {
+      document.body.style.paddingBottom = "9rem"
+    } else {
+      document.body.style.paddingBottom = ""
+    }
+    return () => {
+      document.body.style.paddingBottom = ""
+    }
+  }, [visible, dismissed])
+
   if (dismissed || !visible) return null
 
   return (

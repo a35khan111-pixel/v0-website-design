@@ -18,7 +18,7 @@ const dyslexiaProgram = {
   intro: [
     "Reading may feel impossible right now \u2014 but it won't be forever.",
     "This program is for the child who feels stuck while everyone else moves ahead \u2014 the child who avoids books, guesses at words, or melts down over homework. We remove the guessing and the anxiety by teaching reading the way your child's brain actually learns.",
-    'As Orton-Gillingham trained practitioners, we don\'t help children simply cope with dyslexia \u2014 we help them conquer it. This is where symbols begin to make sense, frustration turns into "I got it!", and your child discovers something powerful: "I can actually read."',
+    'As Orton-Gillingham and Structured Word Inquiry (SWI) trained practitioners, we don\'t help children simply cope with dyslexia. We help them conquer it. This is where symbols begin to make sense, frustration turns into "I got it!", and your child discovers something powerful: "I can actually read."',
   ],
   whatChildReceives: [
     "1-on-1 sessions (45 minutes) tailored to your child's specific learning profile",
