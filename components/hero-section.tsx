@@ -34,7 +34,7 @@ export function HeroSection() {
               <span className="text-primary">·</span>
               <span>Dyslexia Specialists</span>
               <span className="text-primary">·</span>
-              <span>School Curriculum Aligned</span>
+              <span>Online &amp; In-Person</span>
             </div>
 
             <h1 className="font-serif text-3xl leading-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
@@ -47,7 +47,16 @@ export function HeroSection() {
               </span>
             </h1>
 
-            {/* Star Rating - under headline */}
+            {/* Third line - directly under headline */}
+            <p className="-mt-1 text-lg font-medium text-foreground/70 sm:text-xl">
+              {"We don\u2019t just teach \u2014 We Resolve."}
+            </p>
+
+            <p className="max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
+              Experts in empowering students who learn differently, delivering proven results for over 25 years.
+            </p>
+
+            {/* Star Rating - below the subhead */}
             <div className="flex items-center gap-2">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
@@ -57,10 +66,6 @@ export function HeroSection() {
               <span className="text-sm font-medium text-foreground">5.0</span>
               <span className="text-sm text-muted-foreground">· 22 Google Reviews</span>
             </div>
-
-            <p className="max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Expert reading specialists, educational consultants and life coaches helping your child master learning and life.
-            </p>
 
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button size="lg" asChild className="text-base shadow-lg shadow-primary/20">
@@ -122,67 +127,52 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* New Intro Section - directly after hero */}
-      <div className="bg-card py-8 lg:py-12">
-        <div className="mx-auto max-w-3xl px-6">
-          <div className="flex flex-col gap-4 text-base leading-relaxed text-muted-foreground md:text-lg">
+      {/* Intro Section - directly after hero */}
+      <div className="bg-card py-10 lg:py-16">
+        <div className="mx-auto max-w-3xl px-6 lg:max-w-none lg:px-16 xl:px-24">
+          {/* Location + service statement for local & AI search */}
+          <p className="mb-6 text-sm font-medium uppercase tracking-wide text-primary md:text-base">
+            {"Serving families in Mississauga, Oakville, Brampton, and across Ontario \u2014 online and in person."}
+          </p>
+
+          <h2 className="mb-6 font-serif text-2xl leading-tight text-foreground md:text-3xl lg:text-4xl">
+            {"Behind Every Struggling Reader is a Bright Child Waiting to Soar. We Don\u2019t Just Teach Reading \u2014 We Resolve the Struggle"}
+          </h2>
+
+          <div className="flex flex-col gap-4 text-left text-base leading-relaxed text-muted-foreground md:text-lg">
             <p>
-              Our heart lies in supporting students who struggle with reading, writing, or spelling by bridging their learning gaps so they can reach their full potential.
+              {"Your child is bright. You know it. But somewhere between the page and their brain, something got lost \u2014 and it\u2019s costing them their confidence, their joy, and their belief in themselves. But this story does not end here."}
             </p>
             <p>
-              We do this by combining the absolute gold standards of clinical literacy intervention: the <strong className="text-foreground">Orton-Gillingham Approach</strong> and <strong className="text-foreground">Structured Word Inquiry (SWI)</strong>.
+              {"Imagine them picking up books willingly. Reading with accuracy. Spelling without dread. Walking into school with confidence, joy, and higher self-esteem. This is not a fantasy. This is what we make possible at Reading Resolved."}
             </p>
             <p>
-              By providing highly structured, therapeutic instruction, we don&apos;t just teach children to memorize words: we show them how language actually works, building real, lasting gains in decoding, spelling accuracy, and deep comprehension, guiding your child back to grade level and beyond.
+              {"We are "}
+              <strong className="text-foreground">Orton-Gillingham reading specialists</strong>
+              {". Not a general tutoring centre. Not a one-size-fits-all approach. We specialize in students who learn differently \u2014 resolving everything that holds them back and helping them not just overcome dyslexia, but thrive far beyond it."}
             </p>
             <p>
-              <strong className="text-foreground">We are here to prove what you&apos;ve known all along: your child CAN read. They just needed the right instruction.</strong>
+              {"In 25 years, we have supported thousands of students and have not witnessed a single one who hasn\u2019t made significant gains within 1 to 2 years \u2014 including families who felt they had already tried everything else."}
+            </p>
+            <p>
+              {"Our experts use structured, evidence-based approaches to help students understand how language actually works \u2014 building deep, permanent strength in decoding, spelling, and comprehension."}
+            </p>
+            <p>
+              {"And when reading clicks \u2014 and it will \u2014 we don\u2019t stop there. A reading struggle is rarely just about reading. Long before the breakthrough, it chips away at a child\u2019s deep-rooted confidence, joy, and self-belief. That is why from day one, we address the whole child \u2014 not just the page. Through specialized academic and life coaching, we help them rebuild their self-esteem, master core life skills, and become the ideal versions of themselves."}
+            </p>
+            <p>
+              <strong className="text-foreground">{"Your child CAN read"}</strong>
+              {". They just needed the right instruction."}
+            </p>
+            <p className="font-medium text-foreground">
+              {"The struggle ends here. The new story begins today."}
             </p>
           </div>
 
-          {/* Results Section */}
-          <div className="mt-6">
-            <h3 className="mb-4 font-serif text-lg font-bold text-foreground md:text-xl">
-              Results you will see:
-            </h3>
-            <ul className="flex flex-col gap-3">
-              <li className="flex items-start gap-3">
-                <span className="mt-0.5 text-primary">✓</span>
-                <span className="text-sm leading-relaxed text-muted-foreground md:text-base">
-                  <strong className="text-foreground">Picks up books willingly.</strong> Reading becomes something they choose, not avoid.
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-0.5 text-primary">✓</span>
-                <span className="text-sm leading-relaxed text-muted-foreground md:text-base">
-                  <strong className="text-foreground">Keeps up and catches up.</strong> Matches or exceeds grade-level expectations.
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-0.5 text-primary">✓</span>
-                <span className="text-sm leading-relaxed text-muted-foreground md:text-base">
-                  <strong className="text-foreground">Reads words accurately.</strong> Decodes with precision instead of guessing.
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-0.5 text-primary">✓</span>
-                <span className="text-sm leading-relaxed text-muted-foreground md:text-base">
-                  <strong className="text-foreground">Writes ideas confidently.</strong> Translates thoughts to paper with clarity.
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-0.5 text-primary">✓</span>
-                <span className="text-sm leading-relaxed text-muted-foreground md:text-base">
-                  <strong className="text-foreground">{"Says \"I can do this.\""}</strong> Replaces self-doubt with genuine belief.
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Bridge to Programs */}
-          <div className="mt-6 text-center">
-            <p className="text-base leading-relaxed text-muted-foreground md:text-lg">
-              Ready to get started? Explore our three programs below, or book a free consultation to find the perfect fit for your child.
+          {/* Transition into Programs */}
+          <div className="mt-8">
+            <p className="text-base leading-relaxed text-foreground md:text-lg">
+              {"Your child\u2019s turning point starts here. Discover the programs we\u2019ve designed to help your child master reading and own their future."}
             </p>
           </div>
         </div>

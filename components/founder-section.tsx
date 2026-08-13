@@ -39,13 +39,13 @@ export function FounderSection() {
                 {"You\u2019re here because you believe your child is capable of more \u2014 and you\u2019re absolutely right. They are."}
               </p>
               <p>
-                {"For 25 years, I\u2019ve helped families transform what once felt impossible into powerful \"We did it!\" moments."}
+                {"For 25 years, I have sat across from families just like yours. Parents who were exhausted, confused, and quietly terrified about what their child\u2019s future might look like. I have watched children who were 1, 5, even 20 years behind in their reading abilities find their footing \u2014 and fly."}
+              </p>
+              <p className="font-medium text-foreground">
+                {"Every single one of them."}
               </p>
               <p>
-                {"As a specialist in dyslexia and learning differences, I started Reading Resolved because I saw too many brilliant children losing their confidence in a system that was never designed for how they learn."}
-              </p>
-              <p>
-                {"We provide more than lessons \u2014 we provide a specialist-led journey that stays with your child from their first breakthrough to the day they truly believe in themselves."}
+                {"I started Reading Resolved because I saw too many brilliant children losing their confidence in a system that was never designed for how they learn. That still drives me every single day."}
               </p>
               <p className="rounded-xl bg-accent/50 px-5 py-4 font-medium text-foreground">
                 {"You\u2019ve found the right place. Let\u2019s help your child discover what they\u2019re capable of \u2014 together."}

@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import { ProgramsHero } from "@/components/programs-hero"
 import { ProgramsOverview } from "@/components/programs-overview"
 import { ProgramDetail } from "@/components/program-detail"
+import { ApproachSections } from "@/components/approach-sections"
 import { CTASection } from "@/components/cta-section"
 
 export const metadata: Metadata = {
@@ -115,6 +116,7 @@ export default function ProgramsPage() {
       <ProgramsHero />
       <ProgramsOverview />
       <ProgramDetail {...dyslexiaProgram} />
+      <ApproachSections />
       <ProgramDetail {...dyscalculiaProgram} reversed bgClass="bg-muted/50" />
       <ProgramDetail {...academicProgram} />
       <ProgramDetail {...coachingProgram} reversed bgClass="bg-muted/50" />
