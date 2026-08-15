@@ -133,7 +133,7 @@ function validateStep(step: number, data: FormData): string[] {
     case 4:
       if (!data.allergies.trim()) errors.push("Please describe any allergies (or type 'None').")
       if (!data.hasIEP) errors.push("Please indicate whether your child has an IEP.")
-      if (!data.hasPsychoEd) errors.push("Please indicate whether your child has had a psycho-ed evaluation.")
+      if (!data.hasPsychoEd) errors.push("Please indicate whether your child has had a psychoeducational evaluation.")
       if (!data.medications) errors.push("Please indicate whether your child takes learning-related medications.")
       if (!data.handedness) errors.push("Please indicate your child's handedness.")
       break
@@ -496,7 +496,7 @@ export default function RegisterPage() {
                     <div className="rounded-xl border border-border bg-card p-6">
                       <div className="mb-4 flex items-center gap-2">
                         <User className="h-5 w-5 text-primary" />
-                        <h3 className="text-lg font-semibold">{"Father's"} Information</h3>
+                        <h3 className="text-lg font-semibold">Parent/Guardian 1 (Relationship to student)</h3>
                       </div>
                       <div className="space-y-4">
                         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -542,7 +542,7 @@ export default function RegisterPage() {
                     <div className="rounded-xl border border-border bg-card p-6">
                       <div className="mb-4 flex items-center gap-2">
                         <User className="h-5 w-5 text-primary" />
-                        <h3 className="text-lg font-semibold">{"Mother's"} Information</h3>
+                        <h3 className="text-lg font-semibold">Parent/Guardian 2 (Relationship to student)</h3>
                       </div>
                       <div className="space-y-4">
                         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -608,7 +608,7 @@ export default function RegisterPage() {
                       Home Address
                     </h2>
                     <p className="mt-1 text-muted-foreground">
-                      Used for in-person session planning.
+                      Used for session planning and communication.
                     </p>
                   </div>
 
@@ -772,7 +772,7 @@ export default function RegisterPage() {
                     {/* Psycho-Ed */}
                     <div className="rounded-xl border border-border bg-card p-6">
                       <Label className="text-sm font-medium">
-                        Has your child had a psycho-ed evaluation done?{" "}
+                        Has your child had a psychoeducational evaluation done?{" "}
                         <span className="text-destructive">*</span>
                       </Label>
                       <RadioGroup
@@ -854,14 +854,20 @@ export default function RegisterPage() {
                     {/* Handedness */}
                     <div>
                       <Label className="text-sm font-medium">
-                        Is your child right-handed or left-handed?{" "}
+                        Is your child left-handed, right-handed, or ambidextrous?{" "}
                         <span className="text-destructive">*</span>
                       </Label>
                       <RadioGroup
                         value={formData.handedness}
                         onValueChange={(val) => updateField("handedness", val)}
-                        className="mt-3 flex gap-6"
+                        className="mt-3 flex flex-wrap gap-6"
                       >
+                        <div className="flex items-center gap-2">
+                          <RadioGroupItem value="left" id="hand-left" />
+                          <Label htmlFor="hand-left" className="font-normal">
+                            Left
+                          </Label>
+                        </div>
                         <div className="flex items-center gap-2">
                           <RadioGroupItem value="right" id="hand-right" />
                           <Label htmlFor="hand-right" className="font-normal">
@@ -869,9 +875,9 @@ export default function RegisterPage() {
                           </Label>
                         </div>
                         <div className="flex items-center gap-2">
-                          <RadioGroupItem value="left" id="hand-left" />
-                          <Label htmlFor="hand-left" className="font-normal">
-                            Left
+                          <RadioGroupItem value="ambidextrous" id="hand-ambidextrous" />
+                          <Label htmlFor="hand-ambidextrous" className="font-normal">
+                            Ambidextrous
                           </Label>
                         </div>
                       </RadioGroup>
@@ -888,7 +894,7 @@ export default function RegisterPage() {
                       {"Your Child's"} Story
                     </h2>
                     <p className="mt-1 text-muted-foreground">
-                      Help us see the whole child -- their personality, their
+                      Help us see the whole child, their personality, their
                       spark, and how we can best support them.
                     </p>
                   </div>

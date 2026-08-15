@@ -90,6 +90,12 @@ export function Footer() {
                 Success Stories
               </Link>
               <Link
+                href="/faq"
+                className="text-sm text-muted-foreground transition-colors hover:text-primary"
+              >
+                FAQ
+              </Link>
+              <Link
                 href="/contact"
                 className="text-sm text-muted-foreground transition-colors hover:text-primary"
               >

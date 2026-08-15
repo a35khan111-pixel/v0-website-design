@@ -16,7 +16,7 @@ import { Textarea } from "@/components/ui/textarea"
 
 declare global {
   interface Window {
-    gtag?: (...args: unknown[]) => void
+    dataLayer?: Record<string, unknown>[]
   }
 }
 
@@ -56,8 +56,10 @@ export default function ContactPage() {
         throw new Error(data.error || "Failed to send message.")
       }
 
-      // GA4 key event: successful contact form submission
-      window.gtag?.("event", "contact_form_submit", {
+      // GTM conversion event: fires only on confirmed successful submission
+      window.dataLayer = window.dataLayer || []
+      window.dataLayer.push({
+        event: "contact_form_submit",
         page_location: "/contact",
       })
 
@@ -84,80 +86,14 @@ export default function ContactPage() {
                 <div className="h-px w-8 bg-primary" />
               </div>
               <h1 className="font-serif text-4xl text-background text-balance md:text-5xl lg:text-6xl">
-                {"One Conversation Can Change Everything. Let\u2019s Begin."}
+                {"One Conversation Can Change Everything."}
               </h1>
               <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-background/70">
-                {"Book a consultation or send us a message \u2014 whichever way feels right to you. We\u2019re here."}
+                {"You\u2019ve been searching for the right help. You\u2019ve tried things that didn\u2019t work. You\u2019re still here because you believe your child can get there \u2014 and you\u2019re right."}
               </p>
               <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-background/50">
-                {"Many of the parents who contact us have been searching for the right help for a long time. You\u2019re not alone \u2014 and the right support can make all the difference."}
+                {"Tell us about your child below. There are no wrong answers. We simply want to understand what your child is experiencing so we can guide you toward the best next step."}
               </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Three Contact Cards */}
-        <section className="py-12 lg:py-16">
-          <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-16">
-            <div className="grid gap-6 md:grid-cols-3">
-              {/* Card 1 - Teal background */}
-              <div className="flex flex-col rounded-2xl bg-primary p-8 text-primary-foreground">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-foreground/20">
-                  <Calendar className="h-6 w-6" />
-                </div>
-                <h3 className="mb-2 font-serif text-xl">
-                  Book Your Time Directly
-                </h3>
-                <p className="mb-6 flex-1 text-sm leading-relaxed text-primary-foreground/80">
-                  {"A comfortable, honest conversation. Tell us about your child and ask us anything. You\u2019ll walk away with clarity on exactly what your child needs and how we can help."}
-                </p>
-                <Button
-                  asChild
-                  variant="secondary"
-                  className="w-full"
-                >
-                  <a
-                    href="https://calendly.com/readingresolved/free-consultation-understanding-your-child-s-needs"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Book My Free Consultation
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </a>
-                </Button>
-              </div>
-
-              {/* Card 2 - White background */}
-              <div className="flex flex-col rounded-2xl border border-border bg-card p-8">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <Phone className="h-6 w-6" />
-                </div>
-                <h3 className="mb-2 font-serif text-xl text-card-foreground">
-                  Call Us
-                </h3>
-                <p className="mb-4 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {"Prefer to speak directly? We\u2019re happy to answer your questions and help you decide on the best next step."}
-                </p>
-                <a
-                  href="tel:+16476325801"
-                  className="text-lg font-semibold text-primary transition-colors hover:text-primary/80"
-                >
-                  +1 (647) 632-5801
-                </a>
-              </div>
-
-              {/* Card 3 - White background */}
-              <div className="flex flex-col rounded-2xl border border-border bg-card p-8">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <Mail className="h-6 w-6" />
-                </div>
-                <h3 className="mb-2 font-serif text-xl text-card-foreground">
-                  Send Us a Message
-                </h3>
-                <p className="flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {"Reach out by message. Fill out the form below and we\u2019ll respond within 24 hours."}
-                </p>
-              </div>
             </div>
           </div>
         </section>
@@ -313,6 +249,77 @@ export default function ContactPage() {
                   </p>
                 </form>
               )}
+            </div>
+          </div>
+        </section>
+
+        {/* Secondary contact options */}
+        <section className="py-12 lg:py-16">
+          <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-16">
+            <div className="mb-8 text-center">
+              <h2 className="font-serif text-2xl text-foreground md:text-3xl">
+                Prefer a different way to connect?
+              </h2>
+            </div>
+            <div className="grid gap-6 md:grid-cols-3">
+              {/* Card 1 - Teal background */}
+              <div className="flex flex-col rounded-2xl bg-primary p-8 text-primary-foreground">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-foreground/20">
+                  <Calendar className="h-6 w-6" />
+                </div>
+                <h3 className="mb-2 font-serif text-xl">
+                  Book Your Time Directly
+                </h3>
+                <p className="mb-6 flex-1 text-sm leading-relaxed text-primary-foreground/80">
+                  {"A comfortable, honest conversation. Tell us about your child and ask us anything. You\u2019ll walk away with clarity on exactly what your child needs and how we can help."}
+                </p>
+                <Button
+                  asChild
+                  variant="secondary"
+                  className="w-full"
+                >
+                  <a
+                    href="https://calendly.com/readingresolved/free-consultation-understanding-your-child-s-needs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Book My Free Consultation
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+
+              {/* Card 2 - White background */}
+              <div className="flex flex-col rounded-2xl border border-border bg-card p-8">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <Phone className="h-6 w-6" />
+                </div>
+                <h3 className="mb-2 font-serif text-xl text-card-foreground">
+                  Call Us
+                </h3>
+                <p className="mb-4 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {"Prefer to speak directly? We\u2019re happy to answer your questions and help you decide on the best next step."}
+                </p>
+                <a
+                  href="tel:+16476325801"
+                  className="text-lg font-semibold text-primary transition-colors hover:text-primary/80"
+                >
+                  +1 (647) 632-5801
+                </a>
+              </div>
+
+              {/* Card 3 - White background */}
+              <div className="flex flex-col rounded-2xl border border-border bg-card p-8">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
+                  <Mail className="h-6 w-6" />
+                </div>
+                <h3 className="mb-2 font-serif text-xl text-card-foreground">
+                  Send Us a Message
+                </h3>
+                <p className="flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {"Reach out by message. Fill out the form above and we\u2019ll respond within 24 hours."}
+                </p>
+              </div>
             </div>
           </div>
         </section>

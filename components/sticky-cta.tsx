@@ -18,11 +18,13 @@ export function StickyCTA() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Add bottom padding to the page so the fixed bar never covers content
+  // Add bottom padding to the page so the fixed bar never covers content.
+  // Mobile stacks the buttons, so it needs more clearance than desktop.
   useEffect(() => {
     const showing = visible && !dismissed
     if (showing) {
-      document.body.style.paddingBottom = "9rem"
+      const isMobile = window.matchMedia("(max-width: 639px)").matches
+      document.body.style.paddingBottom = isMobile ? "7rem" : "5rem"
     } else {
       document.body.style.paddingBottom = ""
     }
@@ -34,9 +36,9 @@ export function StickyCTA() {
   if (dismissed || !visible) return null
 
   return (
-    <div className="fixed bottom-[60px] left-0 right-0 z-40 translate-y-0 transition-transform duration-300 sm:bottom-0">
+    <div className="fixed bottom-0 left-0 right-0 z-40 translate-y-0 pb-[env(safe-area-inset-bottom)] transition-transform duration-300">
       <div className="border-t border-border/60 bg-background/95 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] backdrop-blur supports-[backdrop-filter]:bg-background/85">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6">
           <div className="hidden items-center gap-3 sm:flex">
             <div className="h-2 w-2 animate-pulse rounded-full bg-primary" />
             <p className="text-sm font-medium text-foreground">
