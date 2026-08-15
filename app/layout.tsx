@@ -45,6 +45,21 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="preload" href="/images/logo.png" as="image" />
+        {/* Google tag (gtag.js) - Google Ads: AW-442653461 */}
+        <Script
+          id="gtag-js"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-442653461"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-442653461');
+          `}
+        </Script>
+        {/* End Google tag (gtag.js) */}
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
