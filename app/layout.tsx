@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from 'next'
-import Script from 'next/script'
 import { DM_Sans, DM_Serif_Display } from 'next/font/google'
 import { Navbar } from '@/components/navbar'
 import { Footer } from '@/components/footer'
@@ -45,16 +44,40 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="preload" href="/images/logo.png" as="image" />
-        {/* Google Tag Manager */}
-        <Script id="google-tag-manager" strategy="afterInteractive">
-          {`
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-MFK3C7XM');
-          `}
-        </Script>
+        {/*
+          Google tag (gtag.js) - Google Ads: AW-442653461
+          Rendered as raw <script> tags so they land in the server-rendered
+          <head> on every page and load independently of React hydration.
+          Do not convert these to next/script: `afterInteractive` injects into
+          the body, which is what stopped Tag Assistant from detecting the tag.
+        */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-442653461"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-442653461');
+            `,
+          }}
+        />
+        {/* End Google tag (gtag.js) */}
+        {/* Google Tag Manager - same raw-script treatment as the gtag above */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-MFK3C7XM');
+            `,
+          }}
+        />
         {/* End Google Tag Manager */}
       </head>
       <body

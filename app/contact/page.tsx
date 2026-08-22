@@ -17,6 +17,7 @@ import { Textarea } from "@/components/ui/textarea"
 declare global {
   interface Window {
     dataLayer?: Record<string, unknown>[]
+    gtag?: (...args: unknown[]) => void
   }
 }
 
@@ -61,6 +62,12 @@ export default function ContactPage() {
       window.dataLayer.push({
         event: "contact_form_submit",
         page_location: "/contact",
+      })
+
+      // Google Ads conversion: fires directly via gtag on the success callback
+      // (the form shows an inline confirmation instead of redirecting).
+      window.gtag?.("event", "conversion", {
+        send_to: "AW-442653461/FGgKCOaXsJsYEJW2idMB",
       })
 
       setSubmitted(true)
